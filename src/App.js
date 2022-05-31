@@ -1,13 +1,34 @@
+import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
-import NavBar from './components/NavBar';
+import Form from './components/Form'
+import Favorites from './components/Favorites';
 import MainContent from './components/MainContent';
+import {Switch, Route} from "react-router-dom";
+
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+    .then(resp => resp.json())
+    .then(memeObj => console.log(memeObj))
+  })
+
   return (
     <div>
       <Header/>
-      <NavBar/>
+      <Switch>
+        <Route path = "/form">
+          <Form />
+        </Route>
+        <Route path = "/home">
+          <MainContent />
+        </Route>
+        <Route path = "favorites">
+          <Favorites />
+        </Route>
+      </Switch>
       <MainContent/>
     </div>
   );
