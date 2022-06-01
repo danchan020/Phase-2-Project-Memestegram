@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Comments from './Comments'
 
-function ContentCard({ id, url, genre, name, comments, favorites, addtoFavorites }) {
+function ContentCard({ id, url, genre, name, comments, favorites, addToFavorites, baseUrl }) {
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
 	const heartLink = "https://cdn-images-1.medium.com/max/800/1*vtFx84vFOMGI76SfQTGCVQ.png"
@@ -22,11 +22,19 @@ function ContentCard({ id, url, genre, name, comments, favorites, addtoFavorites
 			</form>
 		</div>
 
-	const handleLike = () => {
+	const handleLike = (e) => {
 		setIsHeart(!isHeart)
-		console.log(favorites)
-		return isHeart === true ? addtoFavorites(id) : null
+		fetch(baseUrl + `/${id}`, {
+			method: 'PATCH',
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify()
+		})
+			.then(r => r.json())
+			.then(() => console.log())
 	}
+
 
 	return (
 		<div>
