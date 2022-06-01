@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from './PostCard';
 
-function MainContent({ memes, addToFavorites, baseUrl }) {
+function MainContent({ memes, addToFavorites, baseUrl, removeFromFavorites }) {
 
 	const renderPosts = memes.map(post => {
 		return (
@@ -9,6 +9,7 @@ function MainContent({ memes, addToFavorites, baseUrl }) {
 				key={post.id}
 				{...post}
 				addToFavorites={addToFavorites}
+				removeFromFavorites={removeFromFavorites}
 				baseUrl={baseUrl}
 			/>
 		)

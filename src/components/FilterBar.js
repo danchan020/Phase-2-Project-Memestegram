@@ -10,6 +10,7 @@ import NavBar from './NavBar';
 function FilterBar() {
 	const [favoritesList, setFavoritesList] = useState([])
 	const [memes, setMemes] = useState([])
+	const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
 	useEffect(() => {
@@ -22,20 +23,20 @@ function FilterBar() {
 		setMemes([...memes, formData])
 	 }
 	
-	// const addToFavorites = (id) => {
-	// 	console.log(id)
-	// 	const updateFavorites = memes.find(meme => meme.id === id)
-	// 	console.log(updateFavorites)
-	// }
+	const addToFavorites = (id) => {
+		const findFaves = memes.find(meme => meme.id === id)
+		const updatedFaves = [...favoritesList, findFaves]
+		setFavoritesList(updatedFaves)		
+	}
+
+	const removeFromFavorites = (id) => {
+		const filterFaves = favoritesList.filter(meme => meme.id !== id)
+		setFavoritesList(filterFaves)
+	}
 
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
 	})
-
-	// fetch request to post add comments
-	// a filter to look at favorites truthy falsey value
-
-	const [page, setPage] = useState("/")
 
 	return (
 		<div>
@@ -45,10 +46,15 @@ function FilterBar() {
 					<Form handleAddMeme={handleAddMeme} />
 				</Route>
 				<Route exact path="/">
-					<MainContent memes={memes} baseUrl={baseUrl} />
+					<MainContent 
+					memes={memes} 
+					baseUrl={baseUrl} 
+					addToFavorites={addToFavorites}
+					removeFromFavorites={removeFromFavorites}
+					 />
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoriteFilter={favoriteFilter} />
+					<Favorites favoritesList={favoriteFilter} />
 				</Route>
 			</Switch>
 		</div>

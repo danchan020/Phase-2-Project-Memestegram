@@ -1,16 +1,16 @@
 import React from 'react'
 import PostCard from './PostCard'
 
-function Favorites({ favoriteFilter }) {
+function Favorites({ favoritesList }) {
 
-	console.log(favoriteFilter)
-	const renderPosts = favoriteFilter.map(post => {
+	console.log(favoritesList)
+	const renderPosts = favoritesList.map(post => {
 		return (
 			<PostCard
 				key={post.id}
 				{...post}
 				// addtoFavorites={addtoFavorites}
-                
+  
 			/>
 		)
 	})
