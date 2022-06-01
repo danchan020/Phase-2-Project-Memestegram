@@ -1,8 +1,13 @@
 import React from 'react'
 
-function ContentCard() {
+function ContentCard({ id, url, genre, name, comments }) {
 	return (
-		<div>ContentCard</div>
+		<div>
+			<img src={url} alt={name}/>
+			<h5>{name}</h5>
+			<p>{genre}</p>
+			<p>{comments}</p>
+		</div>
 	)
 }
 
