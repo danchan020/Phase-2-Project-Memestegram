@@ -3,11 +3,11 @@ import Comments from './Comments'
 
 function ContentCard({ id, url, genre, name, comments, favorites, addtoFavorites }) {
 	
-	const [showComments, setShowComments] = useState(false)
-	const [isHeart, setIsHeart] = useState(favorites)
-
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
 	const heartLink = "https://cdn-images-1.medium.com/max/800/1*vtFx84vFOMGI76SfQTGCVQ.png"
+
+	const [showComments, setShowComments] = useState(false)
+	const [isHeart, setIsHeart] = useState(favorites)
 
 	const renderComments = comments.map((comment, index) => {
 		return <Comments key={comment[index]} comment={comment} />
