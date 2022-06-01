@@ -32,7 +32,7 @@ function App() {
 				<Route path="/form">
 					<Form />
 				</Route>
-				<Route path="/home">
+				<Route path="/">
 					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
 				</Route>
 				<Route path="/favorites">
