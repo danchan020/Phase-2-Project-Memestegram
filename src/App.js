@@ -1,47 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from './components/Header';
-import Form from './components/Form'
-import Favorites from './components/Favorites';
-import MainContent from './components/MainContent';
-import { Switch, Route } from "react-router-dom";
-
+import FilterBar from './components/FilterBar';
 import './App.css';
 
-// json-server --watch db.json --port 8000
-
 function App() {
-
-	const [memes, setMemes] = useState([])
-	const [favorites, setFavorites] = useState([])
-
-	useEffect(() => {
-		fetch('http://localhost:8000/memes')
-			.then(resp => resp.json())
-			.then(memeObj => setMemes(memeObj))
-	}, [])
-
-  function handleAddMeme(formData){
-    setMemes([...memes, formData])
-  }
-
-	const addtoFavorites = (id) => {
-		console.log(id)
-	}
 
 	return (
 		<div>
 			<Header />
-			<Switch>
-				<Route path="/form">
-					<Form handleAddMeme={handleAddMeme}/>
-				</Route>
-				<Route path="/">
-					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
-				</Route>
-				<Route path="/favorites">
-					<Favorites />
-				</Route>
-			</Switch>
+			<FilterBar/>
 		</div>
 	);
 }

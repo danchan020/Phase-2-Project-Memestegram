@@ -1,17 +1,24 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import PostCard from './PostCard'
 
 
-function Favorites() {
-  
-  return (
-  //   <li className="card">
-  //   <img src={memeObj.url} alt={memeObj.name} />
-  //   <h4>{memeObj.name}</h4>
-    
+function Favorites({ favoriteFilter }) {
 
-  // </li>
-    <div></div>
-  )
+	const renderPosts = favoriteFilter.map(post => {
+		return (
+			<PostCard
+				key={post.id}
+				{...post}
+				// addtoFavorites={addtoFavorites}
+			/>
+		)
+	})
+
+	return (
+		<div>
+			{renderPosts}
+		</div>
+	)
 }
 
 export default Favorites

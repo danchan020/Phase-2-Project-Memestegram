@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBar from './NavBar'
 
 function Header() {
 	return (
@@ -34,7 +33,6 @@ function Header() {
 					src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png'
 				/>
 			</nav>
-			<NavBar />
 		</div>
 	)
 }
