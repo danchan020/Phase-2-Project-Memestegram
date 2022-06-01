@@ -25,11 +25,10 @@ function App() {
         <Route path = "/home">
           <MainContent />
         </Route>
-        <Route path = "favorites">
+        <Route path = "/favorites">
           <Favorites />
         </Route>
       </Switch>
-      <MainContent/>
     </div>
   );
 }
