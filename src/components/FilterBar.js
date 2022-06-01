@@ -10,8 +10,9 @@ function FilterBar() {
 	const [favoritesList, setFavoritesList] = useState([])
 	const [memes, setMemes] = useState([])
 
+	const baseUrl = 'http://localhost:8000/memes'
 	useEffect(() => {
-		fetch('http://localhost:8000/memes')
+		fetch(baseUrl)
 			.then(resp => resp.json())
 			.then(memeObj => setMemes(memeObj))
 	}, [])
@@ -20,9 +21,11 @@ function FilterBar() {
 		setMemes([...memes, formData])
 	 }
 	
-	const addtoFavorites = (id) => {
-		console.log(id)
-	}
+	// const addToFavorites = (id) => {
+	// 	console.log(id)
+	// 	const updateFavorites = memes.find(meme => meme.id === id)
+	// 	console.log(updateFavorites)
+	// }
 
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
@@ -38,11 +41,10 @@ function FilterBar() {
 					<Form handleAddMeme={handleAddMeme} />
 				</Route>
 				<Route exact path="/">
-					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
+					<MainContent memes={memes} baseUrl={baseUrl} />
 				</Route>
 				<Route path="/favorites">
 					<Favorites favoriteFilter={favoriteFilter} />
-					{/* react not seeing favorites component */}
 				</Route>
 			</Switch>
 		</div>

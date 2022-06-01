@@ -1,14 +1,15 @@
 import React from 'react'
 import PostCard from './PostCard';
 
-function MainContent({ memes, addtoFavorites }) {
+function MainContent({ memes, addToFavorites, baseUrl }) {
 
 	const renderPosts = memes.map(post => {
 		return (
 			<PostCard
 				key={post.id}
 				{...post}
-				addtoFavorites={addtoFavorites}
+				addToFavorites={addToFavorites}
+				baseUrl={baseUrl}
 			/>
 		)
 	})
