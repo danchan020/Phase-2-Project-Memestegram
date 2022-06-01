@@ -9,30 +9,36 @@ import './App.css';
 
 function App() {
 
+  const [memes, setMemes]= useState([])
+
   useEffect(() => {
     fetch('http://localhost:3000/memes')
     .then(resp => resp.json())
-    .then(memeObj => console.log(memeObj))
-  })
+    .then(memeObj => setMemes(memeObj))
+  }, [])
 
   return (
     <div>
       <Header/>
       <Switch>
+
         <Route path = "/form">
           <Form />
         </Route>
+
         <Route path = "/home">
-          <MainContent />
+          <MainContent memes={memes}/>
         </Route>
+
         <Route path = "favorites">
           <Favorites />
         </Route>
+
       </Switch>
       <MainContent/>
+      <Favorites />
     </div>
   );
 }
 
 export default App;
-

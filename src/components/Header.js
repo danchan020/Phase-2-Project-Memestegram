@@ -28,12 +28,11 @@ function Header() {
         <img className='navigation-likes-icon'
         src='https://cdn-images-1.medium.com/max/800/1*vtFx84vFOMGI76SfQTGCVQ.png' />
 
+        <img className='navigation-user-icon'
+        src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png' />
 
 
-
-
-
-        
+    
       </nav>
       <NavBar />
     </div>

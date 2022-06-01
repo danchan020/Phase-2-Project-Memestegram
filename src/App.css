@@ -52,7 +52,7 @@
 .navigation-home-icon {
   width: 20px;
   height: auto;
-  padding-left: 660px;
+  padding-left: 630px;
   padding-bottom: 14px;
 }
 
@@ -83,6 +83,12 @@
   height: auto;
   padding-left: 20px;
   padding-bottom: 14px;
-  
+}
+
+.navigation-user-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 20px;
+  padding-bottom: 14px;
 }
 
