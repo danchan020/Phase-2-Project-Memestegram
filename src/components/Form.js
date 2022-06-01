@@ -17,8 +17,8 @@ function handleChange (e){
 
 function handleSubmit (e){
   e.preventDefault()
-  fetch('', {
-    method: 'POST'
+  fetch('http://localhost:8000/memes', {
+    method: 'POST',
     headers: {
       'Content-Type' : 'application/json'
     },

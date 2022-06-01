@@ -1,8 +1,12 @@
 import React from 'react'
 
-function Comments() {
+function Comments({ comment }) {
+
 	return (
-		<div>Comments</div>
+		<div>
+			<p>"{comment}"</p>
+			{/* <button>Add comment</button> */}
+		</div>
 	)
 }
 
