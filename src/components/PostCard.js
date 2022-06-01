@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Comments from './Comments'
 
-function ContentCard({ id, url, genre, name, comments }) {
+function ContentCard({ id, url, genre, name, comments, favorites, addtoFavorites }) {
 	
 	const [showComments, setShowComments] = useState(false)
-	const [isHeart, setIsHeart] = useState(false)
+	const [isHeart, setIsHeart] = useState(favorites)
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
 	const heartLink = "https://cdn-images-1.medium.com/max/800/1*vtFx84vFOMGI76SfQTGCVQ.png"
@@ -13,13 +13,18 @@ function ContentCard({ id, url, genre, name, comments }) {
 		return <Comments key={comment[index]} comment={comment} />
 	})
 
+	const handleLike = () => {
+		setIsHeart(!isHeart)
+		console.log(favorites)
+		return isHeart===true ? addtoFavorites(id) : null
+	}
 
 	return (
 		<div>
 			<img src={url} alt={name} />
 			<h5>{name}</h5>
 			<img
-				onClick={() => setIsHeart(!isHeart)}
+				onClick={handleLike}
 				className='navigation-likes-icon'
 				src={isHeart ? heartLinkFull : heartLink} />
 			<p>Genre: {genre}</p>

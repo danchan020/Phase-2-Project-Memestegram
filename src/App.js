@@ -12,12 +12,18 @@ import './App.css';
 function App() {
 
 	const [memes, setMemes] = useState([])
+	const [favorites, setFavorites] = useState([])
 
 	useEffect(() => {
 		fetch('http://localhost:8000/memes')
 			.then(resp => resp.json())
 			.then(memeObj => setMemes(memeObj))
 	}, [])
+
+
+	const addtoFavorites = (id) => {
+		console.log(id)
+	}
 
 	return (
 		<div>
@@ -27,7 +33,7 @@ function App() {
 					<Form />
 				</Route>
 				<Route path="/home">
-					<MainContent memes={memes} />
+					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
 				</Route>
 				<Route path="/favorites">
 					<Favorites />
