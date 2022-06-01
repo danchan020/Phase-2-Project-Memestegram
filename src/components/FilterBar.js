@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MainContent from './MainContent'
-import Favorites from './Favorites'
+import Favorites from './Favorites';
 import Form from './Form'
 import { Switch, Route } from "react-router-dom";
 
@@ -34,7 +34,7 @@ function FilterBar() {
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
 				</Route>
-				<Route path="/">
+				<Route exact path="/">
 					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
 				</Route>
 				<Route path="/favorites">

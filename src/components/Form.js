@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 
 function Form({handleAddMeme}) {
 
@@ -30,6 +30,10 @@ function handleSubmit (e){
     })
 }
 
+const focusEffect = useRef()
+
+useEffect(() => {focusEffect.current.focus()})
+
   return (
     <form onSubmit = {handleSubmit}>
       <h1> Post Your Meme!</h1>
@@ -39,6 +43,7 @@ function handleSubmit (e){
         id="title"
         value = {formData.title}
         onChange = {handleChange}
+        ref = {focusEffect}
       />
 
       <label> Image URL: </label>
