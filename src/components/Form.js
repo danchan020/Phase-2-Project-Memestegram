@@ -1,22 +1,37 @@
 import React, {useState} from 'react'
 
-function Form() {
+function Form({handleAddMeme}) {
 
-const [formData, setFormData] = useState({
+const initialMemeData = {
   title: "",
   meme: "",
   genre: "coding"
-})
-
-function handleChange (e){
-  const key = e.target.id
-  setFormData( {...formData, [key] : e.target.value})
 }
 
-console.log(formData)
+const [formData, setFormData] = useState(initialMemeData)
+
+function handleChange (e){
+  const {id, value} = e.target
+  setFormData( {...formData, [id] : value})
+}
+
+function handleSubmit (e){
+  e.preventDefault()
+  fetch('', {
+    method: 'POST'
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(formData)
+  }).then(resp => resp.json())
+    .then(formData => {
+      handleAddMeme(formData)
+      setFormData(initialMemeData)
+    })
+}
 
   return (
-    <form >
+    <form onSubmit = {handleSubmit}>
       <h1> Post Your Meme!</h1>
       <label>Title: </label>
       <input

@@ -20,7 +20,7 @@ function App() {
       <Header/>
       <Switch>
         <Route path = "/form">
-          <Form />
+          <Form handleAddMeme = {handleAddMeme}/>
         </Route>
         <Route path = "/home">
           <MainContent />
