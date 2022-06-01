@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation-border {
+  border-bottom: 1px solid lightgrey;
+  padding: 5px 0;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.navigation-logo {
+  width: auth;
+  height: 40px;
+}
+
+.navigation-home-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 660px;
+  padding-bottom: 14px;
+}
+
+.navigation-messenger-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 20px;
+  padding-bottom: 14px;
+}
+
+.navigation-add-post-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 20px;
+  padding-bottom: 14px;
+}
+
+.navigation-git-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 20px;
+  padding-bottom: 14px;
+}
+
+
+.navigation-likes-icon {
+  width: 20px;
+  height: auto;
+  padding-left: 20px;
+  padding-bottom: 14px;
+  
+}
+

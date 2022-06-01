@@ -10,7 +10,7 @@ import './App.css';
 function App() {
 
   useEffect(() => {
-    fetch('https://api.imgflip.com/get_memes')
+    fetch('http://localhost:3000/memes')
     .then(resp => resp.json())
     .then(memeObj => console.log(memeObj))
   })
@@ -35,3 +35,4 @@ function App() {
 }
 
 export default App;
+

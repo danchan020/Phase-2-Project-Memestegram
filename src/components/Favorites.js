@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 function Favorites() {
   return (
-    <div>Favorites</div>
+    <li className="card">
+
+    </li>
   )
 }
 
