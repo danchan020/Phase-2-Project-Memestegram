@@ -13,7 +13,7 @@ function ContentCard({ id, url, genre, name, comments }) {
 		<div>
 			<img src={url} alt={name} />
 			<h5>{name}</h5>
-			<p>{genre}</p>
+			<p>Genre: {genre}</p>
 			<button onClick={() => setShowComments(!showComments)} >
 				View All Comments
 			</button>

@@ -7,6 +7,8 @@ import { Switch, Route } from "react-router-dom";
 
 import './App.css';
 
+// json-server --watch db.json --port 8000
+
 function App() {
 
 	const [memes, setMemes] = useState([])
