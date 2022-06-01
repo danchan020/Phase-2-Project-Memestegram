@@ -42,6 +42,7 @@ function Form({ handleAddMeme }) {
         id="title"
         value={formData.title}
         onChange={handleChange}
+        ref = {focusEffect}
       />
 
       <label> Image URL: </label>
