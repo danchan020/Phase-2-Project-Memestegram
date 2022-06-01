@@ -33,7 +33,7 @@ function handleSubmit (e){
   return (
     <form onSubmit = {handleSubmit}>
       <h1> Post Your Meme!</h1>
-      <label>Title: </label>
+      <label> Title: </label>
       <input
         type="text"
         id="title"
@@ -50,7 +50,7 @@ function handleSubmit (e){
       />
 
       <img
-        src = {"https://codingbootcamps.io/wp-content/uploads/m2.png"}
+        src = {formData.meme || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
         alt = "meme preview"
       />
 
