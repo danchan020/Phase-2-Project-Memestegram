@@ -37,20 +37,21 @@ function ContentCard({ id, url, genre, name, comments, favorites, addToFavorites
 
 
 	return (
-		<div>
-			<img src={url} alt={name} />
-			<h5>{name}</h5>
+		<div className='postcard-post'>
+			<img className="postcard-image" src={url} alt={name} />
+			<br></br>
 			<img
 				onClick={handleLike}
 				className='navigation-likes-icon'
-				src={isHeart ? heartLinkFull : heartLink} />
-			<p>Genre: {genre}</p>
+				src={isHeart ? heartLinkFull : heartLink}
+			/>
+			<h5 className='postcard-post-name'>{name}</h5>
+			<h5 className='postcard-post-genre'>Genre: {genre}</h5>
 			<button onClick={() => setShowComments(!showComments)} >
 				View All Comments
 			</button>
 			<div>
 				{showComments ? activeComments : null}
-
 			</div>
 		</div>
 	)
