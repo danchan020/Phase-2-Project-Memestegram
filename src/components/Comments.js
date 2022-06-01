@@ -5,7 +5,6 @@ function Comments({ comment }) {
 	return (
 		<div>
 			<p>"{comment}"</p>
-			{/* <button>Add comment</button> */}
 		</div>
 	)
 }
