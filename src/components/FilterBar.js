@@ -3,6 +3,7 @@ import MainContent from './MainContent'
 import Form from './Form'
 import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
+import NavBar from './NavBar';
 
 // json-server --watch db.json --port 8000
 
@@ -34,8 +35,11 @@ function FilterBar() {
 	// fetch request to post add comments
 	// a filter to look at favorites truthy falsey value
 
+	const [page, setPage] = useState("/")
+
 	return (
 		<div>
+			<NavBar onChangePage = {setPage}/>
 			<Switch>
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
