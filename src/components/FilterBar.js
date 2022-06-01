@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import MainContent from './MainContent'
-import Favorites from './Favorites'
 import Form from './Form'
+import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
+
+// json-server --watch db.json --port 8000
 
 function FilterBar() {
 	const [favoritesList, setFavoritesList] = useState([])
@@ -25,6 +27,7 @@ function FilterBar() {
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
 	})
+
 	// fetch request to post add comments
 	// a filter to look at favorites truthy falsey value
 
@@ -34,16 +37,14 @@ function FilterBar() {
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
 				</Route>
-				<Route path="/">
+				<Route exact path="/">
 					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
 				</Route>
 				<Route path="/favorites">
 					<Favorites favoriteFilter={favoriteFilter} />
+					{/* react not seeing favorites component */}
 				</Route>
 			</Switch>
-
-
-
 		</div>
 	)
 }

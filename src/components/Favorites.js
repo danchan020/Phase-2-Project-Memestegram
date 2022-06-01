@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PostCard from './PostCard'
-
 
 function Favorites({ favoriteFilter }) {
 
+	console.log(favoriteFilter)
 	const renderPosts = favoriteFilter.map(post => {
 		return (
 			<PostCard
