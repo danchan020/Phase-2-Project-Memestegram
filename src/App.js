@@ -12,6 +12,7 @@ import './App.css';
 function App() {
 
 	const [memes, setMemes] = useState([])
+	const [favorites, setFavorites] = useState([])
 
 	useEffect(() => {
 		fetch('http://localhost:8000/memes')
@@ -23,6 +24,10 @@ function App() {
     setMemes([...memes, formData])
   }
 
+	const addtoFavorites = (id) => {
+		console.log(id)
+	}
+
 	return (
 		<div>
 			<Header />
@@ -30,8 +35,8 @@ function App() {
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme}/>
 				</Route>
-				<Route path="/home">
-					<MainContent memes={memes} />
+				<Route path="/">
+					<MainContent memes={memes} addtoFavorites={addtoFavorites} />
 				</Route>
 				<Route path="/favorites">
 					<Favorites />
