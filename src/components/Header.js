@@ -33,20 +33,6 @@ function Header() {
 					src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png'
 				/>
 			</nav>
-
-			<div className='filter-box'>
-				<img className='filter-box-cool'
-					src='https://cdn-images-1.medium.com/max/800/1*dxqYYwASUE0JTX-svqgEFA.png' />
-
-				<img className='filter-box-funny'
-					src='https://cdn-images-1.medium.com/max/800/1*tY2nbxgv-6xA0eUHTih3JQ.png' />
-
-				<img className='filter-box-shocking'
-					src='https://cdn-images-1.medium.com/max/800/1*9PovJWTegJ87jLr0-Uw0MQ.png' />
-
-				<img className='filter-box-questionable'
-					src='https://cdn-images-1.medium.com/max/800/1*PFqWC7Y79cvJgvUZ6_G6SA.png' />
-			</div>
 		</div>
 	)
 }
