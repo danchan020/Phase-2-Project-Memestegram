@@ -111,53 +111,72 @@
 	text-align: center;
 	border: 1px solid lightgray;
 	margin-bottom: 20px;
-	width: 300px;
+	width: 400x;
 	/*this fits our image post size*/
-	margin-left: 422px;
+	margin-left: 200pxpx;
+	
 	/*need to change*/
 }
 
 .filter-box-cool {
-	display: inline-block;
+	display: flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	width: 55px;
+	background-color: white;
+	
+}
+
+.pop-culture {
+	font-size: smaller;
 }
 
 .filter-box-funny {
-	display: inline-block;
+	display: flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	width: 55px;
-	margin-left: 20px;
+	background-color: white;
+}
+
+.troll {
+	font-size: smaller;
 }
 
 .filter-box-shocking {
-	display: inline-block;
+	display: flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	width: 55px;
-	margin-left: 20px;
+	background-color: white;
+}
+
+.animals {
+	font-size: smaller;
 }
 
 .filter-box-questionable {
-	display: inline-block;
+	display: flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	width: 55px;
-	margin-left: 20px;
+	background-color: white;
+}
+
+.fails {
+	font-size: smaller;
 }
 
 .postcard-post {
