@@ -3,7 +3,7 @@ import PostCard from './PostCard';
 
 function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 
-	const [selectedGenre, setSelectedGenre] = useState("Default")
+	const [selectedGenre, setSelectedGenre] = useState("All")
 	
 	const handleChange = (e) => {
 		setSelectedGenre(e.target.value)
@@ -11,7 +11,7 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 
 
 	const filteredGenres = memes
-		.filter(meme => selectedGenre === 'Default' || meme.genre === selectedGenre)
+		.filter(meme => selectedGenre === 'All' || meme.genre === selectedGenre)
 
 	const renderPosts = filteredGenres.map(post => {
 		return (
@@ -32,7 +32,7 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 			type = "text" 
 			onChange = {handleChange}
 			>
-
+				<option value="All"> All </option>
 				<option value="Coding"> Coding </option>
 				<option value="Pop Culture"> Pop Culture </option>
 				<option value="Troll"> Troll </option>
