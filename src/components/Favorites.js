@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from './PostCard'
 
-function Favorites({ favoritesList, removeFromFavorites }) {
+function Favorites({ favoritesList }) {
 
 	const renderPosts = favoritesList.map(post => {
 		return (
@@ -9,7 +9,6 @@ function Favorites({ favoritesList, removeFromFavorites }) {
 				key={post.id}
 				post={post}
 				{...post}
-				addtoFavorites={removeFromFavorites}
 			/>
 		)
 	})

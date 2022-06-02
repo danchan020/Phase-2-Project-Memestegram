@@ -12,24 +12,19 @@ function FilterBar() {
 	const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
+
 	useEffect(() => {
 		fetch(baseUrl)
 			.then(resp => resp.json())
 			.then(data => setMemes(data))
 	}, [])
 
+	useEffect(() => {
+		
+	}, [memes])
+
 
 	const handleAddMeme = (formData) => setMemes([...memes, formData])
-
-	const addToFavorites = (id) => {
-		const findFaves = memes.find(meme => meme.id === id)
-		if(!memes.includes(findFaves)) {
-		}		
-	}
-
-	const removeFromFavorites = (id) => {
-		const filterFaves = memes.filter(meme => meme.id !== id)
-	}
 
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
@@ -45,13 +40,11 @@ function FilterBar() {
 				<Route exact path="/">
 					<MainContent
 						memes={memes}
-						baseUrl={baseUrl}
-						addToFavorites={addToFavorites}
-						// removeFromFavorites={removeFromFavorites}
+						baseUrl={baseUrl}				
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoriteFilter} removeFromFavorites={removeFromFavorites}/>
+					<Favorites favoritesList={favoriteFilter}/>
 				</Route>
 			</Switch>
 		</div>

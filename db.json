@@ -7,9 +7,12 @@
       "genre": "default",
       "comments": [
         "Please",
-        "Let me call you on your cell phone"
+        "Let me call you on your cell phone",
+        "asdf",
+        "sadf",
+        "asfd"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "2",
@@ -52,7 +55,7 @@
       "comments": [
         "I got 99 uno cards, but a wild card aint one"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "6",
@@ -63,7 +66,7 @@
         "causal commute to work",
         "me aftering after watching tokyo drift"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "7",
@@ -74,7 +77,7 @@
         "Looks at those guns!",
         "good one!"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "8",
@@ -104,7 +107,8 @@
       "genre": "default",
       "comments": [
         "This is great!"
-      ]
+      ],
+      "favorites": false
     },
     {
       "id": "S4Inb0r",
@@ -120,14 +124,7 @@
       "url": "asdf",
       "genre": "troll",
       "comments": [],
-      "favorites": true
-    },
-    {
-      "comments": [
-        "Please",
-        "Let me call you on your cell phone"
-      ],
-      "id": "bRgqARf"
+      "favorites": false
     }
   ]
 }

@@ -8,9 +8,7 @@ function ContentCard({
 	name,
 	comments,
 	favorites,
-	addToFavorites,
 	baseUrl,
-	removeFromFavorites
 }) {
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
@@ -36,8 +34,8 @@ function ContentCard({
 				"comments" : newComments
 			})
 		}).then(resp => resp.json())
-			.then(() => {				
-				
+			.then(() => {
+				setAddComment("")
 			})
 	}
 
@@ -53,7 +51,7 @@ function ContentCard({
 		})
 			.then(r => r.json())
 			.then(() => {
-				isHeart === false ? addToFavorites(id) : removeFromFavorites(id)
+				// isHeart === false ? addToFavorites(id) : removeFromFavorites(id)
 			})
 		setIsHeart(!isHeart)
 	}
