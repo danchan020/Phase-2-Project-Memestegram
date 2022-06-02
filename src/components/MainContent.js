@@ -5,13 +5,11 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 
 	const [selectedGenre, setSelectedGenre] = useState("All")
 	
-	const handleChange = (e) => {
-		setSelectedGenre(e.target.value)
-		}  
+	const handleChange = (e) => setSelectedGenre(e.target.value)  
 
-
-	const filteredGenres = memes
-		.filter(meme => selectedGenre === 'All' || meme.genre === selectedGenre)
+	const filteredGenres = memes.filter(
+		meme => selectedGenre === 'All' || meme.genre === selectedGenre
+		)
 
 	const renderPosts = filteredGenres.map(post => {
 		return (
@@ -19,7 +17,6 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 				key={post.id}
 				{...post}
 				addToFavorites={addToFavorites}
-				// removeFromFavorites={removeFromFavorites}
 				baseUrl={baseUrl}
 				updateFaves={updateFaves}
 			/>

@@ -4,6 +4,7 @@ import Form from './Form'
 import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
 import NavBar from './NavBar';
+import Moment from 'react-moment';
 
 // json-server --watch db.json --port 8000
 
@@ -17,7 +18,10 @@ function FilterBar() {
 	useEffect(() => {
 		fetch(baseUrl)
 			.then(resp => resp.json())
-			.then(data => setMemes(data))
+			.then(data => {
+				setMemes(data)
+				setFavoritesList(data.filter(meme => meme.favorites === true))
+			})
 	}, [])
 
 	const handleAddMeme = (formData) => setMemes([...memes, formData])
@@ -36,18 +40,23 @@ function FilterBar() {
 			.then(r => r.json())
 			.then((obj) => {
 				const filterMemes = memes.filter(meme => meme.id !== id)
-				
-				const newMemes = [...filterMemes, obj]
-				setMemes(memes)
+				const newMemes = [...filterMemes, obj].sort((a , b) => b.timestamp - a.timestamp)
 				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
+				setMemes(newMemes)
 			})
 	} 
 
-	// how do we filter the two seperate containers
-	// one needs all posts
-	// the other needs liked posts
-	// ideally the order the memes does not change when liked
-
+	const sortMemes = memes.sort((a , b) => b.timestamp - a.timestamp)
+	console.log(sortMemes)
+	// const unixTimestamp = 198784740
+	// const date = new Date(unixTimestamp)
+	// console.log("Date: "+date.getDate()+
+	// "/"+(date.getMonth()+1)+
+	// "/"+date.getFullYear()+
+	// " "+date.getHours()+
+	// ":"+date.getMinutes()+
+	// ":"+date.getSeconds());
+	
 	return (
 		<div>
 			<NavBar onChangePage={setPage} />
@@ -57,7 +66,7 @@ function FilterBar() {
 				</Route>
 				<Route exact path="/">
 					<MainContent
-						memes={memes}
+						memes={sortMemes}
 						baseUrl={baseUrl}
 						updateFaves={updateFaves}
 					/>
