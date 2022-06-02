@@ -7,7 +7,7 @@ function Form({ handleAddMeme }) {
     name: "",
     url: "",
     genre: "coding",
-    comments: "",
+    comments: [],
     favorites: true
   }
 
@@ -20,15 +20,23 @@ function Form({ handleAddMeme }) {
 
   function handleSubmit(e) {
     e.preventDefault()
+    const newPost = {
+      id: "",
+      name: formData.name,
+      url: formData.url,
+      genre: formData.genre,
+      comments: [],
+      favorites: true
+    }
     fetch('http://localhost:8000/memes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(newPost)
     }).then(resp => resp.json())
-      .then(formData => {
-        handleAddMeme(formData)
+      .then(data => {
+        handleAddMeme(data)
         setFormData(initialMemeData)
       })
   }

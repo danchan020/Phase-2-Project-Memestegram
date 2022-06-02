@@ -103,8 +103,15 @@
       "genre": "default",
       "comments": [
         "This is great!"
-      ],
-      "favorites": false
+      ]
+    },
+    {
+      "id": "S4Inb0r",
+      "name": "dsad",
+      "url": "dsadsa",
+      "genre": "troll",
+      "comments": [],
+      "favorites": true
     }
   ]
 }
