@@ -36,6 +36,7 @@ function FilterBar() {
 			.then(r => r.json())
 			.then((obj) => {
 				const filterMemes = memes.filter(meme => meme.id !== id)
+				
 				const newMemes = [...filterMemes, obj]
 				setMemes(newMemes)
 				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
