@@ -38,7 +38,7 @@ function FilterBar() {
 				const filterMemes = memes.filter(meme => meme.id !== id)
 				
 				const newMemes = [...filterMemes, obj]
-				setMemes(newMemes)
+				setMemes(memes)
 				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
 			})
 	} 
