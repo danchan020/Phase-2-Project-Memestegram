@@ -19,13 +19,36 @@ function FilterBar() {
 			.then(data => setMemes(data))
 	}, [])
 
-	useEffect(() => {
-		
-	}, [memes])
-
-
 	const handleAddMeme = (formData) => setMemes([...memes, formData])
 
+	const updateFaves = (id, value) => {
+	
+		fetch(baseUrl + `/${id}`, {
+			method: 'PATCH',
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				"favorites": !value
+			})
+		})
+			.then(r => r.json())
+			.then((obj) => {
+				const filterMemes = memes.filter(meme => meme.id !== id)
+				const newMemes = [...filterMemes, obj]
+				setMemes(newMemes)
+			})
+	} 
+
+	const handleFaves = (value) => {
+		console.log(value)
+		return value
+	}
+
+	useEffect(() => {
+		setMemes(memes)
+	}, [handleFaves])
+	
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
 	})
@@ -40,11 +63,13 @@ function FilterBar() {
 				<Route exact path="/">
 					<MainContent
 						memes={memes}
-						baseUrl={baseUrl}				
+						baseUrl={baseUrl}
+						handleFaves={handleFaves}
+						updateFaves={updateFaves}
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoriteFilter}/>
+					<Favorites favoritesList={favoriteFilter} handleFaves={handleFaves}/>
 				</Route>
 			</Switch>
 		</div>

@@ -9,6 +9,8 @@ function ContentCard({
 	comments,
 	favorites,
 	baseUrl,
+	handleFaves,
+	updateFaves,
 }) {
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
@@ -40,19 +42,7 @@ function ContentCard({
 	}
 
 	const handleLike = () => {
-		fetch(baseUrl + `/${id}`, {
-			method: 'PATCH',
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				"favorites": !isHeart
-			})
-		})
-			.then(r => r.json())
-			.then(() => {
-				// isHeart === false ? addToFavorites(id) : removeFromFavorites(id)
-			})
+		updateFaves(id, isHeart)
 		setIsHeart(!isHeart)
 	}
 

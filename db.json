@@ -12,7 +12,7 @@
         "sadf",
         "asfd"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "2",
@@ -35,7 +35,7 @@
         "when you see react and your current gf is vanilla JS",
         "daamyumm"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "4",
@@ -45,7 +45,7 @@
       "comments": [
         "This is great!"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "5",
@@ -55,7 +55,7 @@
       "comments": [
         "I got 99 uno cards, but a wild card aint one"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "6",
@@ -87,7 +87,7 @@
       "comments": [
         "ahhahahaha!"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "9",
@@ -98,7 +98,7 @@
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "10",
