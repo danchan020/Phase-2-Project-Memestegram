@@ -66,6 +66,7 @@ function FilterBar() {
 					<Favorites favoritesList={favoritesList} updateFaves={updateFaves}/>
 				</Route>
 			</Switch>
+
 		</div>
 	)
 }
