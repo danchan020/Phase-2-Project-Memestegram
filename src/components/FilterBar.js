@@ -21,12 +21,10 @@ function FilterBar() {
 				const favoriteFilter = data.filter(meme => {
 					if (meme.favorites === true) return meme
 				})
-				console.log(favoriteFilter)
 				setFavoritesList(favoriteFilter)
 			})
 	}, [])
 
-	// need to update state on patch
 
 	function handleAddMeme(formData) {
 		setMemes([...memes, formData])
@@ -39,14 +37,13 @@ function FilterBar() {
 			setFavoritesList([...favoritesList, findFaves])
 		}		
 	}
-	// add a includes(!) method to avoid repeats
 
 	const removeFromFavorites = (id) => {
 		const filterFaves = favoritesList.filter(meme => meme.id !== id)
 		setFavoritesList(filterFaves)
 	}
 
-	// console.log(favorite)
+	
 
 	return (
 		<div>

@@ -18,22 +18,30 @@ function ContentCard({
 
 	const [showComments, setShowComments] = useState(false)
 	const [isHeart, setIsHeart] = useState(favorites)
+	const [userComments, setUserComments] = useState(comments)
+	const [addComment, setAddComment] = useState("")
 
-	const renderComments = comments.map((comment, index) => {
-		return <Comments key={comment[index]} comment={comment} />
-	})
+	const handleChange = (e) => setAddComment(e.target.value)
 
-	const activeComments =
-		<div>
-			{renderComments}
-			<form>
-				<input></input>
-				<button type="submit">Add Comment</button>
-			</form>
-		</div>
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		const newComments = [...userComments, addComment]
+		setUserComments(newComments)
+		fetch(baseUrl + `/${id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				"comments" : newComments
+			})
+		}).then(resp => resp.json())
+			.then(() => {				
+				
+			})
+	}
 
 	const handleLike = () => {
-
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
 			headers: {
@@ -50,6 +58,18 @@ function ContentCard({
 		setIsHeart(!isHeart)
 	}
 
+	const renderComments = userComments.map((comment, index) => {
+		return <Comments key={comment[index]} comment={comment} />
+	})
+
+	const activeComments =
+		<div>
+			{renderComments}
+			<form onSubmit={handleSubmit} onChange={handleChange} >
+				<input type="text" value={addComment}></input>
+				<button type="submit">Add Comment</button>
+			</form>
+		</div>
 
 	return (
 		<div className='postcard-post'>

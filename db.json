@@ -9,7 +9,7 @@
         "Please",
         "Let me call you on your cell phone"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "2",
@@ -18,7 +18,8 @@
       "genre": "default",
       "comments": [
         "This is great!",
-        "Two buttons, one push"
+        "Two buttons, one push",
+        "asdfa"
       ],
       "favorites": false
     },
@@ -120,6 +121,13 @@
       "genre": "troll",
       "comments": [],
       "favorites": true
+    },
+    {
+      "comments": [
+        "Please",
+        "Let me call you on your cell phone"
+      ],
+      "id": "bRgqARf"
     }
   ]
 }
