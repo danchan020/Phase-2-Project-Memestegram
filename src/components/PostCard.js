@@ -33,7 +33,7 @@ function ContentCard({
 		</div>
 
 	const handleLike = () => {
-		setIsHeart(!isHeart)
+
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
 			headers: {
@@ -47,6 +47,7 @@ function ContentCard({
 			.then(() => {
 				isHeart === false ? addToFavorites(id) : removeFromFavorites(id)
 			})
+		setIsHeart(!isHeart)
 	}
 
 
