@@ -73,7 +73,7 @@
         "Looks at those guns!",
         "good one!"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "8",
@@ -112,6 +112,14 @@
       "genre": "troll",
       "comments": [],
       "favorites": false
+    },
+    {
+      "id": "JzWR0HF",
+      "name": "asdf",
+      "url": "asdf",
+      "genre": "troll",
+      "comments": [],
+      "favorites": true
     }
   ]
 }

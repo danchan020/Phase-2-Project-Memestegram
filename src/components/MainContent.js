@@ -9,7 +9,7 @@ function MainContent({ memes, addToFavorites, baseUrl, removeFromFavorites }) {
 				key={post.id}
 				{...post}
 				addToFavorites={addToFavorites}
-				removeFromFavorites={removeFromFavorites}
+				// removeFromFavorites={removeFromFavorites}
 				baseUrl={baseUrl}
 			/>
 		)
