@@ -68,12 +68,12 @@ function Form({ handleAddMeme }) {
         value={formData.genre}
         onChange={handleChange}
       >
-        <option value=""> Coding </option>
-        <option value=""> Pop Culture </option>
-        <option value=""> Troll </option>
-        <option value=""> Fails </option>
-        <option value=""> Sports </option>
-        <option value=""> Animals </option>
+        <option value="coding"> Coding </option>
+        <option value="pop culture"> Pop Culture </option>
+        <option value="troll"> Troll </option>
+        <option value="fails"> Fails </option>
+        <option value="sports"> Sports </option>
+        <option value="animals"> Animals </option>
       </select>
 
 
