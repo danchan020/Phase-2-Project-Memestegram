@@ -7,12 +7,9 @@
       "genre": "default",
       "comments": [
         "Please",
-        "Let me call you on your cell phone",
-        "asdf",
-        "sadf",
-        "asfd"
+        "Let me call you on your cell phone"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "2",
@@ -24,7 +21,7 @@
         "Two buttons, one push",
         "asdfa"
       ],
-      "favorites": false
+      "favorites": true
     },
     {
       "id": "3",
@@ -98,7 +95,7 @@
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "10",
@@ -124,7 +121,7 @@
       "url": "asdf",
       "genre": "troll",
       "comments": [],
-      "favorites": false
+      "favorites": true
     }
   ]
 }

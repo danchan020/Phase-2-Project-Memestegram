@@ -9,7 +9,6 @@ function Favorites({ favoritesList, handleFaves }) {
 				key={post.id}
 				post={post}
 				{...post}
-				handleFaves={handleFaves}
 			/>
 		)
 	})

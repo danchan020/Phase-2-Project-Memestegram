@@ -9,7 +9,6 @@ function ContentCard({
 	comments,
 	favorites,
 	baseUrl,
-	handleFaves,
 	updateFaves,
 }) {
 

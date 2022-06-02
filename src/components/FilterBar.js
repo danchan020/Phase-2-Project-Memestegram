@@ -40,14 +40,6 @@ function FilterBar() {
 			})
 	} 
 
-	const handleFaves = (value) => {
-		console.log(value)
-		return value
-	}
-
-	useEffect(() => {
-		setMemes(memes)
-	}, [handleFaves])
 	
 	const favoriteFilter = memes.filter(meme => {
 		if (meme.favorites === true) return meme
@@ -64,12 +56,11 @@ function FilterBar() {
 					<MainContent
 						memes={memes}
 						baseUrl={baseUrl}
-						handleFaves={handleFaves}
 						updateFaves={updateFaves}
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoriteFilter} handleFaves={handleFaves}/>
+					<Favorites favoritesList={favoriteFilter}/>
 				</Route>
 			</Switch>
 		</div>
