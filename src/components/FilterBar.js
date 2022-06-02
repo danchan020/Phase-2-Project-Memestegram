@@ -9,6 +9,7 @@ import NavBar from './NavBar';
 
 function FilterBar() {
 	const [memes, setMemes] = useState([])
+	const [favoritesList, setFavoritesList] = useState([])
 	const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
@@ -37,13 +38,14 @@ function FilterBar() {
 				const filterMemes = memes.filter(meme => meme.id !== id)
 				const newMemes = [...filterMemes, obj]
 				setMemes(newMemes)
+				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
 			})
 	} 
 
-	
-	const favoriteFilter = memes.filter(meme => {
-		if (meme.favorites === true) return meme
-	})
+	// how do we filter the two seperate containers
+	// one needs all posts
+	// the other needs liked posts
+	// ideally the order the memes does not change when liked
 
 	return (
 		<div>
@@ -60,7 +62,7 @@ function FilterBar() {
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoriteFilter}/>
+					<Favorites favoritesList={favoritesList} updateFaves={updateFaves}/>
 				</Route>
 			</Switch>
 		</div>

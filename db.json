@@ -21,7 +21,7 @@
         "Two buttons, one push",
         "asdfa"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "3",
@@ -42,7 +42,7 @@
       "comments": [
         "This is great!"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "5",
@@ -52,7 +52,7 @@
       "comments": [
         "I got 99 uno cards, but a wild card aint one"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "6",
@@ -84,7 +84,7 @@
       "comments": [
         "ahhahahaha!"
       ],
-      "favorites": true
+      "favorites": false
     },
     {
       "id": "9",
@@ -121,7 +121,7 @@
       "url": "asdf",
       "genre": "troll",
       "comments": [],
-      "favorites": true
+      "favorites": false
     }
   ]
 }
