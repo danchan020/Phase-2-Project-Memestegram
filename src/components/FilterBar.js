@@ -8,7 +8,6 @@ import NavBar from './NavBar';
 // json-server --watch db.json --port 8000
 
 function FilterBar() {
-	const [favoritesList, setFavoritesList] = useState([])
 	const [memes, setMemes] = useState([])
 	const [page, setPage] = useState("/")
 
@@ -16,34 +15,25 @@ function FilterBar() {
 	useEffect(() => {
 		fetch(baseUrl)
 			.then(resp => resp.json())
-			.then(data => {
-				setMemes(data)
-				const favoriteFilter = data.filter(meme => {
-					if (meme.favorites === true) return meme
-				})
-				setFavoritesList(favoriteFilter)
-			})
+			.then(data => setMemes(data))
 	}, [])
 
 
-	function handleAddMeme(formData) {
-		setMemes([...memes, formData])
-	}
-	
+	const handleAddMeme = (formData) => setMemes([...memes, formData])
 
 	const addToFavorites = (id) => {
 		const findFaves = memes.find(meme => meme.id === id)
-		if(!favoritesList.includes(findFaves)) {
-			setFavoritesList([...favoritesList, findFaves])
+		if(!memes.includes(findFaves)) {
 		}		
 	}
 
 	const removeFromFavorites = (id) => {
-		const filterFaves = favoritesList.filter(meme => meme.id !== id)
-		setFavoritesList(filterFaves)
+		const filterFaves = memes.filter(meme => meme.id !== id)
 	}
 
-	
+	const favoriteFilter = memes.filter(meme => {
+		if (meme.favorites === true) return meme
+	})
 
 	return (
 		<div>
@@ -61,7 +51,7 @@ function FilterBar() {
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoritesList} removeFromFavorites={removeFromFavorites}/>
+					<Favorites favoritesList={favoriteFilter} removeFromFavorites={removeFromFavorites}/>
 				</Route>
 			</Switch>
 		</div>
