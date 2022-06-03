@@ -97,14 +97,12 @@ function ContentCard({
 							src='https://cdn-images-1.medium.com/max/1600/1*_tnvQnWTMGO6ZoI8QeykBQ.png' />
 
 							<img className='post-bookmark-icon'
-							src='https://cdn-images-1.medium.com/max/1600/1*9ieawD2LdNfPIMKGx3VEVQ.png' />
+							onClick={deletePost}
+							src='https://cdn-images-1.medium.com/max/1600/1*Ki0dQKH53TQuUVzvlCBIbw.png' />
 						</div>
 						<h5 className='postcard-post-name'>{name}</h5>
 						<p className='postcard-post-genre'>Genre: {genre}</p>
 						<p className='postcard-post-genre'>Date: {renderDate}</p>
-					</div>
-					<div>
-						<button onClick={deletePost}>Delete Post</button>
 					</div>
 					<div className='comment-wrapper'>
 						<button onClick={() => setShowComments(!showComments)} >
