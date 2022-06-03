@@ -310,7 +310,7 @@
 
 .form {
 	text-align: center;
-	border: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
 }
 
 .form-title {
