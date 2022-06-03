@@ -51,49 +51,56 @@ function Form({ handleAddMeme }) {
 	useEffect(() => { focusEffect.current.focus() }, [])
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<h3 className='form-title'> Post Your Meme!</h3>
-			<div className='form-input-title'>
-				<label > Title: </label>
-				<input
-					type="text"
-					id="name"
-					value={formData.title}
-					onChange={handleChange}
-					ref={focusEffect}
-				/>
-			</div>
+		
+		<form		
+			onSubmit={handleSubmit}>
 			
+			<div className='form'>
+				<h3 className='form-title'> Post Your Meme!</h3>
+					<input
+						className='form-title-input'
+						id="name"
+						onChange={handleChange}
+						placeholder='Title:'
+						ref={focusEffect}
+						type="text"
+						value={formData.title}
+					/>
+					<br></br>
+					<input
+						className='form-url-input'
+						id="url"
+						onChange={handleChange}
+						placeholder="URL:"
+						type="text"
+						value={formData.meme}
+						
+					/>
+				<div >
+					<label> Genre: </label>
+					<select
+						className='form-input-select'
+						type="text"
+						id="genre"
+						value={formData.genre}
+						onChange={handleChange}
+					>
+					<option value="Coding"> Coding </option>
+					<option value="Pop culture"> Pop Culture </option>
+					<option value="Troll"> Troll </option>
+					<option value="Fails"> Fails </option>
+					<option value="Sports"> Sports </option>
+					<option value="Animals"> Animals </option>
+					</select>
+					<input type="submit" value="Post" />
+				</div>
 			
-
-			<label> Image URL: </label>
-			<input
-				type="text"
-				id="url"
-				value={formData.meme}
-				onChange={handleChange}
-			/>
-
-			<img
+				<img
+				className='form-image'
 				src={formData.url || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
 				alt="meme preview"
-			/>
-
-			<label> Genre: </label>
-			<select
-				type="text"
-				id="genre"
-				value={formData.genre}
-				onChange={handleChange}
-			>
-				<option value="Coding"> Coding </option>
-				<option value="Pop culture"> Pop Culture </option>
-				<option value="Troll"> Troll </option>
-				<option value="Fails"> Fails </option>
-				<option value="Sports"> Sports </option>
-				<option value="Animals"> Animals </option>
-			</select>
-			<input type="submit" value="Post" />
+				/>
+			</div>
 		</form>
 	)
 }

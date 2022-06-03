@@ -39,7 +39,7 @@
 }
 
 
-
+/*NAVIGATION BAR*/ 
 
 .navigation-border {
 	border-bottom: 1px solid lightgrey;
@@ -87,7 +87,6 @@
 	padding-bottom: 14px;
 }
 
-
 .navigation-likes-icon {
 	float: right;
 	width: 20px;
@@ -105,6 +104,7 @@
 	padding-bottom: 14px;
 }
 
+/*GENRE BAR*/ 
 
 .genre-bar {
 	text-align: center;
@@ -112,9 +112,10 @@
 
 .genre-bar-text {
 	text-align: center;
-	width: 300px;
+	width: 400px;
 	border-radius: 5px;
-	background-color: rgb(245, 242, 242);
+	background-color: white;
+	border-color: lightgray;
 }
 
 .option {
@@ -123,37 +124,31 @@
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/*USER EMOJIS*/ 
 
 .filter-box {
 	text-align: center;
 	flex-direction: row;
 	border: 1px solid lightgray;
-	margin-bottom: 20px;
-	width: 400x;
-	/*this fits our image post size*/
-	margin-left: 200pxpx;
-	
-	/*need to change*/
+	margin-bottom: -20px;
+	margin-top: 20px;
 }
 
 .filter-box-cool {
-	display: flex;
+	display: inline-flex;
 	border: 2px solid rgb(239, 161, 239);
-	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	width: 55px;
-	background-color: white;
-	
+	height: auto;
+	background-color: white;	
 }
 
-.pop-culture {
-	font-size: smaller;
-}
+
 
 .filter-box-funny {
-	display: flex;
+	display: inline-flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
@@ -161,29 +156,25 @@
 	-webkit-border-radius: 50%;
 	width: 55px;
 	background-color: white;
+	margin-left: 10px;
 }
 
-.troll {
-	font-size: smaller;
-}
 
 .filter-box-shocking {
-	display: flex;
+	display: inline-flex;
 	border: 2px solid rgb(239, 161, 239);
-	height: auto;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
+
+	height: auto;
 	width: 55px;
 	background-color: white;
-}
-
-.animals {
-	font-size: smaller;
+	margin-left: 10px;
 }
 
 .filter-box-questionable {
-	display: flex;
+	display: inline-flex;
 	border: 2px solid rgb(239, 161, 239);
 	height: auto;
 	border-radius: 50%;
@@ -191,13 +182,11 @@
 	-webkit-border-radius: 50%;
 	width: 55px;
 	background-color: white;
-}
-
-.fails {
-	font-size: smaller;
+	margin-left: 10px;
 }
 
 
+/*MAIN CONTENT- POST*/ 
 
 .post {
 	display: flex;
@@ -241,7 +230,6 @@
 	padding-left: 5px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 
 .postcard-image {
 	width: 100%;
@@ -319,11 +307,34 @@
 }
 
 /*FORM PAGE*/ 
+
+.form {
+	text-align: center;
+	border: 1px solid lightgray;
+}
+
 .form-title {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size:large;
+}
+
+.form-title-input{
+	width: 290px;
+}
+
+.form-url-input {	
+	width: 290px;
+}
+
+.form-input-select {
+	width: 200px;
+}
+
+.form-image {
+	width: 300px;
+	height: auto;
 	text-align: center;
 }
 
-.form-input-title {
-	text-align: center;
-	
-}
+
+
