@@ -63,6 +63,16 @@ function ContentCard({
 			<div className='left-col'>
 
 				<div className='post'>
+					<div className='info'>
+						<div className='user'>
+							<div>
+								<img className= 'profile-pic'
+								src='https://cdn-images-1.medium.com/max/800/1*9PovJWTegJ87jLr0-Uw0MQ.png'/>
+							</div>
+							<h5 className='username'>{name}</h5>
+						</div>
+						
+					</div>
 					<img className="postcard-image" src={url} alt={name} />
 
 					<div className='post-content'>
@@ -72,6 +82,15 @@ function ContentCard({
 							className='post-likes-icon'
 							src={isHeart ? heartLinkFull : heartLink}
 							/>
+
+							<img className="post-comments-icon" 
+							src='https://cdn-images-1.medium.com/max/1600/1*6miMQJi9c1vRDzM_cEvs8A.png' />
+
+							<img className='post-share-icon'
+							src='https://cdn-images-1.medium.com/max/1600/1*_tnvQnWTMGO6ZoI8QeykBQ.png' />
+
+							<img className='post-bookmark-icon'
+							src='https://cdn-images-1.medium.com/max/1600/1*9ieawD2LdNfPIMKGx3VEVQ.png' />
 						</div>
 
 						<h5 className='postcard-post-name'>{name}

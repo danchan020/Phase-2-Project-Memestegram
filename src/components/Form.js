@@ -46,15 +46,19 @@ function Form({ handleAddMeme }) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<h1> Post Your Meme!</h1>
-			<label> Title: </label>
-			<input
-				type="text"
-				id="name"
-				value={formData.title}
-				onChange={handleChange}
-				ref={focusEffect}
-			/>
+			<h3 className='form-title'> Post Your Meme!</h3>
+			<div className='form-input-title'>
+				<label > Title: </label>
+				<input
+					type="text"
+					id="name"
+					value={formData.title}
+					onChange={handleChange}
+					ref={focusEffect}
+				/>
+			</div>
+			
+			
 
 			<label> Image URL: </label>
 			<input

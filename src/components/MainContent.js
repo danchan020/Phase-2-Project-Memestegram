@@ -26,19 +26,23 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 	
 	return (
 		<div>
-			<select  
-			type = "text" 
-			onChange = {handleChange}
-			>
-				<option value="All"> All </option>
-				<option value="Coding"> Coding </option>
-				<option value="Pop Culture"> Pop Culture </option>
-				<option value="Troll"> Troll </option>
-				<option value="Fails"> Fails </option>
-				<option value="Sports"> Sports </option>
-				<option value="Animals"> Animals </option>
-
+			<div className='genre-bar'>
+				<select
+					className='genre-bar-text'
+					type = "text" 
+					onChange = {handleChange}
+				>
+					<option 
+					className='option'
+					value="All"> All </option>
+					<option value="Coding"> Coding </option>
+					<option value="Pop Culture"> Pop Culture </option>
+					<option value="Troll"> Troll </option>
+					<option value="Fails"> Fails </option>
+					<option value="Sports"> Sports </option>
+					<option value="Animals"> Animals </option>
 			</select>
+		</div>
 			{renderPosts}
 		</div>
 	)
