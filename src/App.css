@@ -327,7 +327,12 @@
 }
 
 .form-input-select {
-	width: 200px;
+	width: 298px;
+	height: 22px;
+}
+
+.form-post {
+	width: 130px;
 }
 
 .form-image {

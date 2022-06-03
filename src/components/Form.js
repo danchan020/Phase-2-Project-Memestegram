@@ -54,7 +54,7 @@ function Form({ handleAddMeme }) {
 			onSubmit={handleSubmit}>
 
 			<div className='form'>
-				<h3 className='form-title'> Post Your Meme!</h3>
+				<h3 className='form-title'> Submit Your Meme!</h3>
 				<input
 					className='form-title-input'
 					id="name"
@@ -91,7 +91,7 @@ function Form({ handleAddMeme }) {
 						<option value="Animals"> Animals </option>
 					</select>
 					<div>
-						<input type="submit" value="Post" />
+						<input className='form-post' type="submit" value="Post" />
 					</div>
 				</div>
 
