@@ -4,53 +4,78 @@ import Form from './Form'
 import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
 import NavBar from './NavBar';
+import Moment from 'react-moment';
 
 // json-server --watch db.json --port 8000
 
 function FilterBar() {
-	const [favoritesList, setFavoritesList] = useState([])
 	const [memes, setMemes] = useState([])
+	const [favoritesList, setFavoritesList] = useState([])
+	const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
+
 	useEffect(() => {
 		fetch(baseUrl)
 			.then(resp => resp.json())
-			.then(memeObj => setMemes(memeObj))
+			.then(data => {
+				setMemes(data)
+				setFavoritesList(data.filter(meme => meme.favorites === true))
+			})
 	}, [])
 
-	function handleAddMeme(formData){
-		setMemes([...memes, formData])
-	 }
+	const handleAddMeme = (formData) => setMemes([...memes, formData])
+
+	const updateFaves = (id, value) => {
 	
-	// const addToFavorites = (id) => {
-	// 	console.log(id)
-	// 	const updateFavorites = memes.find(meme => meme.id === id)
-	// 	console.log(updateFavorites)
-	// }
+		fetch(baseUrl + `/${id}`, {
+			method: 'PATCH',
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				"favorites": !value
+			})
+		})
+			.then(r => r.json())
+			.then((obj) => {
+				const filterMemes = memes.filter(meme => meme.id !== id)
+				const newMemes = [...filterMemes, obj].sort((a , b) => b.timestamp - a.timestamp)
+				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
+				setMemes(newMemes)
+			})
+	} 
 
-	const favoriteFilter = memes.filter(meme => {
-		if (meme.favorites === true) return meme
-	})
-
-	// fetch request to post add comments
-	// a filter to look at favorites truthy falsey value
-
-	const [page, setPage] = useState("/")
-
+	const sortMemes = memes.sort((a , b) => b.timestamp - a.timestamp)
+	console.log(sortMemes)
+	// const unixTimestamp = 198784740
+	// const date = new Date(unixTimestamp)
+	// console.log("Date: "+date.getDate()+
+	// "/"+(date.getMonth()+1)+
+	// "/"+date.getFullYear()+
+	// " "+date.getHours()+
+	// ":"+date.getMinutes()+
+	// ":"+date.getSeconds());
+	
 	return (
 		<div>
-			<NavBar onChangePage = {setPage}/>
+			<NavBar onChangePage={setPage} />
 			<Switch>
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
 				</Route>
 				<Route exact path="/">
-					<MainContent memes={memes} baseUrl={baseUrl} />
+					<MainContent
+						memes={sortMemes}
+						baseUrl={baseUrl}
+						updateFaves={updateFaves}
+					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoriteFilter={favoriteFilter} />
+					<Favorites favoritesList={favoritesList} updateFaves={updateFaves}/>
 				</Route>
 			</Switch>
+
 		</div>
 	)
 }

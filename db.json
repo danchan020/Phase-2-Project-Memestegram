@@ -4,23 +4,35 @@
       "id": "1",
       "name": "Drake Hotline Bling",
       "url": "https://i.imgflip.com/30b1gx.jpg",
+<<<<<<< HEAD
       "genre": "Pop Culture",
+=======
+      "genre": "Sports",
+>>>>>>> first-branch
       "comments": [
         "Please",
-        "Let me call you on your cell phone"
+        "Let me call you on your cell phone",
+        "asdfa"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784741
     },
     {
       "id": "2",
       "name": "Two Buttons",
       "url": "https://i.imgflip.com/1g8my4.jpg",
+<<<<<<< HEAD
       "genre": "Troll",
+=======
+      "genre": "Sports",
+>>>>>>> first-branch
       "comments": [
         "This is great!",
-        "Two buttons, one push"
+        "Two buttons, one push",
+        "asdfa"
       ],
-      "favorites": true
+      "favorites": false,
+      "timestamp": 198784742
     },
     {
       "id": "3",
@@ -31,80 +43,125 @@
         "when you see react and your current gf is vanilla JS",
         "daamyumm"
       ],
-      "favorites": true
+      "favorites": false,
+      "timestamp": 198784743
     },
     {
       "id": "4",
       "name": "Running Away Balloon",
       "url": "https://i.imgflip.com/261o3j.jpg",
+<<<<<<< HEAD
       "genre": "Fails",
+=======
+      "genre": "Animals",
+>>>>>>> first-branch
       "comments": [
         "This is great!"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784744
     },
     {
       "id": "5",
       "name": "UNO Draw 25 Cards",
       "url": "https://i.imgflip.com/3lmzyx.jpg",
+<<<<<<< HEAD
       "genre": "Troll",
+=======
+      "genre": "Animals",
+>>>>>>> first-branch
       "comments": [
         "I got 99 uno cards, but a wild card aint one"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784745
     },
     {
       "id": "6",
       "name": "Left Exit 12 Off Ramp",
       "url": "https://i.imgflip.com/22bdq6.jpg",
+<<<<<<< HEAD
       "genre": "Fails",
+=======
+      "genre": "Coding",
+>>>>>>> first-branch
       "comments": [
         "causal commute to work",
         "me aftering after watching tokyo drift"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784746
     },
     {
       "id": "7",
       "name": "Buff Doge vs. Cheems",
       "url": "https://i.imgflip.com/43a45p.png",
+<<<<<<< HEAD
       "genre": "Animals",
+=======
+      "genre": "Fails",
+>>>>>>> first-branch
       "comments": [
         "Looks at those guns!",
         "good one!"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784747
     },
     {
       "id": "8",
       "name": "Change My Mind",
       "url": "https://i.imgflip.com/24y43o.jpg",
+<<<<<<< HEAD
       "genre": "Troll",
+=======
+      "genre": "Pop Culture",
+>>>>>>> first-branch
       "comments": [
         "ahhahahaha!"
       ],
-      "favorites": false
+      "favorites": false,
+      "timestamp": 198784748
     },
     {
       "id": "9",
       "name": "Gru's Plan",
       "url": "https://i.imgflip.com/26jxvz.jpg",
+<<<<<<< HEAD
       "genre": "Pop Culture",
+=======
+      "genre": "Troll",
+>>>>>>> first-branch
       "comments": [
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": false
+      "favorites": true,
+      "timestamp": 198784749
     },
     {
       "id": "10",
       "name": "Bernie I Am Once Again Asking For Your Support",
       "url": "https://i.imgflip.com/3oevdk.jpg",
+<<<<<<< HEAD
       "genre": "Pop Culture",
+=======
+      "genre": "Troll",
+>>>>>>> first-branch
       "comments": [
         "This is great!"
       ],
-      "favorites": false
+      "favorites": true,
+      "timestamp": 198784750
+    },
+    {
+      "id": "hXJzicq",
+      "name": "asfd",
+      "url": "asfdas",
+      "genre": "Pop culture",
+      "comments": [],
+      "favorites": true,
+      "timestamp": 198784751
     }
   ]
 }

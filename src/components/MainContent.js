@@ -1,54 +1,44 @@
 import React, {useState} from 'react'
 import PostCard from './PostCard';
 
+function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 
-function MainContent({ memes, addToFavorites, baseUrl }) {
+	const [selectedGenre, setSelectedGenre] = useState("All")
 	
-	
-	const renderPosts = memes.map(post => {
+	const handleChange = (e) => setSelectedGenre(e.target.value)  
+
+	const filteredGenres = memes.filter(
+		meme => selectedGenre === 'All' || meme.genre === selectedGenre
+		)
+
+	const renderPosts = filteredGenres.map(post => {
 		return (
 			<PostCard
 				key={post.id}
 				{...post}
 				addToFavorites={addToFavorites}
 				baseUrl={baseUrl}
+				updateFaves={updateFaves}
 			/>
 		)
 	
 	})
-
-
-
-
-
+	
 	return (
 		<div>
-			<div className='filter-box'>
-				<button>
-					<img 		
-					className='filter-box-cool'
-					src='https://cdn-images-1.medium.com/max/800/1*dxqYYwASUE0JTX-svqgEFA.png' />
-				</button>
-				<div className="pop-culture">Pop Culture</div>
+			<select  
+			type = "text" 
+			onChange = {handleChange}
+			>
+				<option value="All"> All </option>
+				<option value="Coding"> Coding </option>
+				<option value="Pop Culture"> Pop Culture </option>
+				<option value="Troll"> Troll </option>
+				<option value="Fails"> Fails </option>
+				<option value="Sports"> Sports </option>
+				<option value="Animals"> Animals </option>
 
-				<button>
-				<img className='filter-box-funny'
-					src='https://cdn-images-1.medium.com/max/800/1*tY2nbxgv-6xA0eUHTih3JQ.png' />
-				</button>
-				<div className="troll">Troll</div>
-
-				<button>
-				<img className='filter-box-shocking'
-					src='https://cdn-images-1.medium.com/max/800/1*9PovJWTegJ87jLr0-Uw0MQ.png' />
-				</button>
-				<div className="animals">Animals</div>
-
-				<button>
-				<img className='filter-box-questionable'
-					src='https://cdn-images-1.medium.com/max/800/1*PFqWC7Y79cvJgvUZ6_G6SA.png' />
-				</button>
-				<div className="fails">Fails</div>
-			</div>
+			</select>
 			{renderPosts}
 		</div>
 	)
