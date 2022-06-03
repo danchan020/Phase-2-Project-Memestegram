@@ -10,7 +10,7 @@
         "Let me call you on your cell phone"
       ],
       "favorites": false,
-      "timestamp": 1654229978560
+      "timestamp": 1624229978560
     },
     {
       "id": "2",
@@ -34,7 +34,7 @@
         "daamyumm"
       ],
       "favorites": false,
-      "timestamp": 1654229878560
+      "timestamp": 1640229878560
     },
     {
       "id": "4",
@@ -45,7 +45,7 @@
         "This is great!"
       ],
       "favorites": false,
-      "timestamp": 1654223978560
+      "timestamp": 1653223978560
     },
     {
       "id": "5",
@@ -56,7 +56,7 @@
         "I got 99 uno cards, but a wild card aint one"
       ],
       "favorites": false,
-      "timestamp": 1654229928560
+      "timestamp": 1650229928560
     },
     {
       "id": "6",
@@ -68,7 +68,7 @@
         "me aftering after watching tokyo drift"
       ],
       "favorites": false,
-      "timestamp": 1654229973560
+      "timestamp": 161429973560
     },
     {
       "id": "7",
@@ -80,7 +80,7 @@
         "good one!"
       ],
       "favorites": false,
-      "timestamp": 1654229975560
+      "timestamp": 1652229975560
     },
     {
       "id": "8",
@@ -123,7 +123,7 @@
       "genre": "Coding",
       "comments": [],
       "favorites": false,
-      "timestamp": 198784751
+      "timestamp": 1654309977560
     }
   ]
 }
