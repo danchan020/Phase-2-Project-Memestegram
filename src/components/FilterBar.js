@@ -46,14 +46,6 @@ function FilterBar() {
 	} 
 
 	const sortMemes = memes.sort((a, b) => b.timestamp - a.timestamp)
-	// const unixTimestamp = 198784740
-	// const date = new Date(unixTimestamp)
-	// console.log("Date: "+date.getDate()+
-	// "/"+(date.getMonth()+1)+
-	// "/"+date.getFullYear()+
-	// " "+date.getHours()+
-	// ":"+date.getMinutes()+
-	// ":"+date.getSeconds());
 	
 	return (
 		<div>

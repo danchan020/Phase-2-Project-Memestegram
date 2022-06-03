@@ -8,6 +8,7 @@ function ContentCard({
 	name,
 	comments,
 	favorites,
+	timestamp,
 	baseUrl,
 	updateFaves,
 }) {
@@ -32,7 +33,7 @@ function ContentCard({
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				"comments" : newComments
+				"comments": newComments
 			})
 		}).then(resp => resp.json())
 			.then(() => {
@@ -58,8 +59,16 @@ function ContentCard({
 			</form>
 		</div>
 
+
+	const date = new Date(timestamp)
+	const renderDate = (
+		(date.getMonth() + 1) +
+		"/" + date.getDate() +
+		"/" + date.getFullYear()
+	);
+
 	return (
-		<div className='postcard-wrapper'> 
+		<div className='postcard-wrapper'>
 			<div className='left-col'>
 
 				<div className='post'>
@@ -68,26 +77,22 @@ function ContentCard({
 					<div className='post-content'>
 						<div className='reaction-wrapper'>
 							<img
-							onClick={handleLike}
-							className='post-likes-icon'
-							src={isHeart ? heartLinkFull : heartLink}
+								onClick={handleLike}
+								className='post-likes-icon'
+								src={isHeart ? heartLinkFull : heartLink}
 							/>
 						</div>
-
-						<h5 className='postcard-post-name'>{name}
-						</h5>
-
+						<h5 className='postcard-post-name'>{name}</h5>
 						<p className='postcard-post-genre'>Genre: {genre}</p>
-						
+						<p lassName='postcard-post-genre'>Date: {renderDate}</p>
 					</div>
 					<div className='comment-wrapper'>
 						<button onClick={() => setShowComments(!showComments)} >
-						View All Comments
+							{showComments ? "Hide Comments" : "View Comments"}
 						</button>
 					</div>
-
 					<div>
-					{showComments ? activeComments : null}
+						{showComments ? activeComments : null}
 					</div>
 
 				</div>
