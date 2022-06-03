@@ -21,7 +21,6 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves }) {
 				updateFaves={updateFaves}
 			/>
 		)
-	
 	})
 	
 	return (

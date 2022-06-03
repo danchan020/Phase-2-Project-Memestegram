@@ -39,7 +39,7 @@ function FilterBar() {
 			.then(r => r.json())
 			.then((obj) => {
 				const filterMemes = memes.filter(meme => meme.id !== id)
-				const newMemes = [...filterMemes, obj].sort((a , b) => a.timestamp - b.timestamp)
+				const newMemes = [...filterMemes, obj].sort((a, b) => b.timestamp - a.timestamp)
 				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
 				setMemes(newMemes)
 			})
@@ -54,8 +54,6 @@ function FilterBar() {
 	// " "+date.getHours()+
 	// ":"+date.getMinutes()+
 	// ":"+date.getSeconds());
-
-	console.log(new Date().getTime())
 	
 	return (
 		<div>

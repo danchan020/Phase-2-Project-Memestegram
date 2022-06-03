@@ -9,11 +9,9 @@ function Form({ handleAddMeme }) {
 		url: "",
 		genre: "coding",
 		comments: [],
-		favorites: true
+		favorites: true,
+		timestamp: "",
 	}
-
-	
-
 	const history = useHistory()
 
 	const [formData, setFormData] = useState(initialMemeData)
@@ -31,7 +29,8 @@ function Form({ handleAddMeme }) {
 			url: formData.url,
 			genre: formData.genre,
 			comments: [],
-			favorites: true
+			favorites: true,
+			timestamp: new Date().getTime()
 		}
 		fetch('http://localhost:8000/memes', {
 			method: 'POST',
