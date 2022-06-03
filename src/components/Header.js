@@ -18,8 +18,10 @@ function Header() {
 					src='https://cdn-images-1.medium.com/max/800/1*vtFx84vFOMGI76SfQTGCVQ.png' />
 				</Link>
 
+				<a href = "https://github.com/danchan020/Phase-2-Project-Memestegram">
 				<img className='navigation-git-icon'
 					src='https://cdn-images-1.medium.com/max/800/1*3aTtZKZ6xdgOjqwn375nfg.png' />
+				</a>
 
 				<Link to="form">
 					<img className='navigation-add-post-icon'
