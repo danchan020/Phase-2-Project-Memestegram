@@ -7,7 +7,7 @@ import Moment from 'react-moment';
 
 // json-server --watch db.json --port 8000
 
-function FilterBar() {
+function FilterBar({ search }) {
 	const [memes, setMemes] = useState([])
 	const [favoritesList, setFavoritesList] = useState([])
 
@@ -30,8 +30,8 @@ function FilterBar() {
 	const updateFaves = (id, value) => {
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
-			headers: {"Content-Type": "application/json",},
-			body: JSON.stringify({"favorites": !value})
+			headers: { "Content-Type": "application/json", },
+			body: JSON.stringify({ "favorites": !value })
 		})
 			.then(resp => resp.json())
 			.then((obj) => {
@@ -54,8 +54,13 @@ function FilterBar() {
 			})
 	}
 
-	const sortMemes = memes.sort((a, b) => b.timestamp - a.timestamp)
-	const sortFaveMemes = favoritesList.sort((a, b) => b.timestamp - a.timestamp)
+	const sortMemes = memes.filter(
+		meme => meme.name.toLowerCase().includes(search.toLowerCase()))
+		.sort((a, b) => b.timestamp - a.timestamp)
+	
+		const sortFaveMemes = favoritesList.filter(
+		meme => meme.name.toLowerCase().includes(search.toLowerCase()))
+		.sort((a, b) => b.timestamp - a.timestamp)
 
 	return (
 		<div>
