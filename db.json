@@ -7,11 +7,10 @@
       "genre": "Sports",
       "comments": [
         "Please",
-        "Let me call you on your cell phone",
-        "asdfa"
+        "Let me call you on your cell phone"
       ],
-      "favorites": false,
-      "timestamp": 198784741
+      "favorites": true,
+      "timestamp": 1654229978560
     },
     {
       "id": "2",
@@ -20,11 +19,10 @@
       "genre": "Sports",
       "comments": [
         "This is great!",
-        "Two buttons, one push",
-        "asdfa"
+        "Two buttons, one push"
       ],
-      "favorites": false,
-      "timestamp": 198784742
+      "favorites": true,
+      "timestamp": 1654229977560
     },
     {
       "id": "3",
@@ -36,7 +34,7 @@
         "daamyumm"
       ],
       "favorites": false,
-      "timestamp": 198784743
+      "timestamp": 1654229878560
     },
     {
       "id": "4",
@@ -47,7 +45,7 @@
         "This is great!"
       ],
       "favorites": false,
-      "timestamp": 198784744
+      "timestamp": 1654223978560
     },
     {
       "id": "5",
@@ -58,7 +56,7 @@
         "I got 99 uno cards, but a wild card aint one"
       ],
       "favorites": false,
-      "timestamp": 198784745
+      "timestamp": 1654229928560
     },
     {
       "id": "6",
@@ -70,7 +68,7 @@
         "me aftering after watching tokyo drift"
       ],
       "favorites": false,
-      "timestamp": 198784746
+      "timestamp": 1654229973560
     },
     {
       "id": "7",
@@ -82,7 +80,7 @@
         "good one!"
       ],
       "favorites": false,
-      "timestamp": 198784747
+      "timestamp": 1654229975560
     },
     {
       "id": "8",
@@ -93,7 +91,7 @@
         "ahhahahaha!"
       ],
       "favorites": false,
-      "timestamp": 198784748
+      "timestamp": 1604229578560
     },
     {
       "id": "9",
@@ -105,7 +103,7 @@
         "my plans for life"
       ],
       "favorites": true,
-      "timestamp": 198784749
+      "timestamp": 1651229878560
     },
     {
       "id": "10",

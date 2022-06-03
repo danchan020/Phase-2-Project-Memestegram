@@ -3,7 +3,6 @@ import MainContent from './MainContent'
 import Form from './Form'
 import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
-import NavBar from './NavBar';
 import Moment from 'react-moment';
 
 // json-server --watch db.json --port 8000
@@ -11,7 +10,6 @@ import Moment from 'react-moment';
 function FilterBar() {
 	const [memes, setMemes] = useState([])
 	const [favoritesList, setFavoritesList] = useState([])
-	const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
 
@@ -24,42 +22,43 @@ function FilterBar() {
 			})
 	}, [])
 
-	const handleAddMeme = (formData) => setMemes([...memes, formData])
+	const handleAddMeme = (formData) => {
+		setMemes([...memes, formData])
+		setFavoritesList([...favoritesList, formData])
+	}
 
 	const updateFaves = (id, value) => {
-	
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				"favorites": !value
-			})
+			headers: {"Content-Type": "application/json",},
+			body: JSON.stringify({"favorites": !value})
 		})
-			.then(r => r.json())
+			.then(resp => resp.json())
 			.then((obj) => {
 				const filterMemes = memes.filter(meme => meme.id !== id)
-				const newMemes = [...filterMemes, obj].sort((a , b) => b.timestamp - a.timestamp)
+				const newMemes = [...filterMemes, obj]
 				setFavoritesList(newMemes.filter(meme => meme.favorites === true))
 				setMemes(newMemes)
 			})
-	} 
+	}
 
-	const sortMemes = memes.sort((a , b) => b.timestamp - a.timestamp)
-	console.log(sortMemes)
-	// const unixTimestamp = 198784740
-	// const date = new Date(unixTimestamp)
-	// console.log("Date: "+date.getDate()+
-	// "/"+(date.getMonth()+1)+
-	// "/"+date.getFullYear()+
-	// " "+date.getHours()+
-	// ":"+date.getMinutes()+
-	// ":"+date.getSeconds());
-	
+	const handleDelete = (id) => {
+		fetch(baseUrl + `/${id}`, {
+			method: 'DELETE',
+		})
+			.then(resp => resp.json())
+			.then(() => {
+				const deleteMeme = memes.filter(meme => meme.id !== id)
+				setFavoritesList(deleteMeme.filter(meme => meme.favorites === true))
+				setMemes(deleteMeme)
+			})
+	}
+
+	const sortMemes = memes.sort((a, b) => b.timestamp - a.timestamp)
+	const sortFaveMemes = favoritesList.sort((a, b) => b.timestamp - a.timestamp)
+
 	return (
 		<div>
-			<NavBar onChangePage={setPage} />
 			<Switch>
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
@@ -69,13 +68,17 @@ function FilterBar() {
 						memes={sortMemes}
 						baseUrl={baseUrl}
 						updateFaves={updateFaves}
+						handleDelete={handleDelete}
 					/>
 				</Route>
 				<Route path="/favorites">
-					<Favorites favoritesList={favoritesList} updateFaves={updateFaves}/>
+					<Favorites
+						favoritesList={sortFaveMemes}
+						updateFaves={updateFaves}
+						handleDelete={handleDelete}
+					/>
 				</Route>
 			</Switch>
-
 		</div>
 	)
 }

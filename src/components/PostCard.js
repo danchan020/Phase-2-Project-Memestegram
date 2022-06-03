@@ -8,8 +8,10 @@ function ContentCard({
 	name,
 	comments,
 	favorites,
+	timestamp,
 	baseUrl,
 	updateFaves,
+	handleDelete
 }) {
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
@@ -28,13 +30,10 @@ function ContentCard({
 		setUserComments(newComments)
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				"comments" : newComments
-			})
-		}).then(resp => resp.json())
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ "comments": newComments })
+		})
+			.then(resp => resp.json())
 			.then(() => {
 				setAddComment("")
 			})
@@ -44,6 +43,15 @@ function ContentCard({
 		updateFaves(id, isHeart)
 		setIsHeart(!isHeart)
 	}
+
+	const deletePost = () => handleDelete(id)
+
+	const date = new Date(timestamp)
+	const renderDate = (
+		(date.getMonth() + 1) +"/" + 
+		date.getDate() + "/" + 
+		date.getFullYear()
+	);
 
 	const renderComments = userComments.map((comment, index) => {
 		return <Comments key={comment[index]} comment={comment} />
@@ -59,9 +67,8 @@ function ContentCard({
 		</div>
 
 	return (
-		<div className='postcard-wrapper'> 
+		<div className='postcard-wrapper'>
 			<div className='left-col'>
-
 				<div className='post'>
 					<div className='info'>
 						<div className='user'>
@@ -74,13 +81,12 @@ function ContentCard({
 						
 					</div>
 					<img className="postcard-image" src={url} alt={name} />
-
 					<div className='post-content'>
 						<div className='reaction-wrapper'>
 							<img
-							onClick={handleLike}
-							className='post-likes-icon'
-							src={isHeart ? heartLinkFull : heartLink}
+								onClick={handleLike}
+								className='post-likes-icon'
+								src={isHeart ? heartLinkFull : heartLink}
 							/>
 
 							<img className="post-comments-icon" 
@@ -92,23 +98,21 @@ function ContentCard({
 							<img className='post-bookmark-icon'
 							src='https://cdn-images-1.medium.com/max/1600/1*9ieawD2LdNfPIMKGx3VEVQ.png' />
 						</div>
-
-						<h5 className='postcard-post-name'>{name}
-						</h5>
-
+						<h5 className='postcard-post-name'>{name}</h5>
 						<p className='postcard-post-genre'>Genre: {genre}</p>
-						
+						<p className='postcard-post-genre'>Date: {renderDate}</p>
+					</div>
+					<div>
+						<button onClick={deletePost}>Delete Post</button>
 					</div>
 					<div className='comment-wrapper'>
 						<button onClick={() => setShowComments(!showComments)} >
-						View All Comments
+							{showComments ? "Hide Comments" : "View Comments"}
 						</button>
 					</div>
-
 					<div>
-					{showComments ? activeComments : null}
+						{showComments ? activeComments : null}
 					</div>
-
 				</div>
 			</div>
 		</div>
