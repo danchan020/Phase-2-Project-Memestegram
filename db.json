@@ -104,7 +104,7 @@
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 198784749
     },
     {
@@ -113,19 +113,11 @@
       "url": "https://i.imgflip.com/3oevdk.jpg",
       "genre": "Troll",
       "comments": [
-        "This is great!"
+        "This is great!",
+        "gfgsdgds"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 198784750
-    },
-    {
-      "id": "hXJzicq",
-      "name": "asfd",
-      "url": "asfdas",
-      "genre": "Pop culture",
-      "comments": [],
-      "favorites": true,
-      "timestamp": 198784751
     }
   ]
 }

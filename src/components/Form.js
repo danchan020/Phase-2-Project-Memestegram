@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import {useHistory} from 'react-router-dom'
 
 function Form({ handleAddMeme }) {
 
@@ -10,6 +11,8 @@ function Form({ handleAddMeme }) {
 		comments: [],
 		favorites: true
 	}
+
+	const history = useHistory()
 
 	const [formData, setFormData] = useState(initialMemeData)
 
@@ -37,8 +40,9 @@ function Form({ handleAddMeme }) {
 		}).then(resp => resp.json())
 			.then(data => {
 				handleAddMeme(data)
-				setFormData(initialMemeData)
+				history.push(`/`)
 			})
+		setFormData(initialMemeData)
 	}
 
 	const focusEffect = useRef()
