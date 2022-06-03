@@ -54,13 +54,22 @@
 	height: 40px;
 }
 
+.navigation-search-input {	
+	
+	float: right;
+	height: auto;
+	border: 1px solid lightgray;
+	background-color: #fff;
+	
+}
+
 
 .navigation-home-icon {
 	float: right;
 	width: 20px;
 	height: auto;
 	padding-bottom: 14px;
-	padding-left: 20px;
+	padding-left:20px;
 }
 
 .navigation-messenger-icon {
@@ -110,6 +119,13 @@
 	text-align: center;
 }
 
+.genre-bar-select {
+	font-size: 11pt;
+	font-weight: bold;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
 .genre-bar-text {
 	text-align: center;
 	width: 400px;
@@ -132,6 +148,7 @@
 	border: 1px solid lightgray;
 	margin-bottom: -20px;
 	margin-top: 20px;
+	
 }
 
 .filter-box-cool {
@@ -255,6 +272,7 @@
 	width: auto;
 	display: flex;
 	position: relative;
+	padding-left: 5px;
 }
 
 .post-comments-icon {
@@ -277,7 +295,7 @@
 
 .post-bookmark-icon {
 	padding-top: 10px;
-	padding-left: 320px;
+	padding-left: 310px;
 	height: 15px;
 	width: auto;
 	display: flex;
@@ -287,12 +305,14 @@
 .postcard-post-name {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	margin-top: -10px;
+	padding-left: 5px;
 }
 
 .postcard-post-genre {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: small;
 	margin-top: -10px;
+	padding-left: 5px;
 	
 }
 
@@ -310,7 +330,7 @@
 
 .form {
 	text-align: center;
-	border: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
 }
 
 .form-title {

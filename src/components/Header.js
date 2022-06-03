@@ -14,8 +14,6 @@ function Header({ handleSearch }) {
 					src='https://cdn-images-1.medium.com/max/800/1*q3DEmm3wsZk5A550FDaaaA.png' />
 				</Link>
 				
-				<input placeholder='Search' onChange={handleChange}></input>
-				
 					<img className='navigation-user-icon'
 					src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png' />
 
@@ -41,6 +39,11 @@ function Header({ handleSearch }) {
 					<img className='navigation-home-icon'
 					src='https://cdn-images-1.medium.com/max/800/1*VvggWFDcai6Sx5GmfpHabw.png' />
 				</Link>
+				
+				<input className='navigation-search-input'
+				placeholder='Search' onChange={handleChange}></input>
+				
+				
 			</nav>
 		</div>
 	)
