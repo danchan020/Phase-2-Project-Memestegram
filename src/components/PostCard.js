@@ -107,7 +107,9 @@ function ContentCard({
 						<button onClick={deletePost}>Delete Post</button>
 					</div>
 					<div className='comment-wrapper'>
-						<button onClick={() => setShowComments(!showComments)} >
+						<button 
+						className='comment-button'
+						onClick={() => setShowComments(!showComments)} >
 							{showComments ? "Hide Comments" : "View Comments"}
 						</button>
 					</div>
