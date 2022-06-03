@@ -4,7 +4,7 @@ function Comments({ comment }) {
 
 	return (
 		<div>
-			<p>"{comment}"</p>
+			<p className="comment-post">"{comment}"</p>
 		</div>
 	)
 }
