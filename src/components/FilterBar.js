@@ -3,7 +3,6 @@ import MainContent from './MainContent'
 import Form from './Form'
 import Favorites from './Favorites'
 import { Switch, Route } from "react-router-dom";
-import NavBar from './NavBar';
 import Moment from 'react-moment';
 
 // json-server --watch db.json --port 8000
@@ -11,7 +10,7 @@ import Moment from 'react-moment';
 function FilterBar() {
 	const [memes, setMemes] = useState([])
 	const [favoritesList, setFavoritesList] = useState([])
-	const [page, setPage] = useState("/")
+	// const [page, setPage] = useState("/")
 
 	const baseUrl = 'http://localhost:8000/memes'
 
@@ -59,7 +58,7 @@ function FilterBar() {
 	
 	return (
 		<div>
-			<NavBar onChangePage={setPage} />
+			{/* <NavBar onChangePage={setPage} /> */}
 			<Switch>
 				<Route path="/form">
 					<Form handleAddMeme={handleAddMeme} />
