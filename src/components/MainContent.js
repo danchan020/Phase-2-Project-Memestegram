@@ -23,6 +23,9 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves, handleDelete
 		)
 	})
 	
+
+	// add Genre label to drop down filter
+
 	return (
 		<div>
 			<div className='genre-bar'>

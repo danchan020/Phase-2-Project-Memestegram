@@ -102,7 +102,7 @@
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 1651229878560
     },
     {
@@ -113,7 +113,7 @@
       "comments": [
         "This is great!"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 198784750
     },
     {

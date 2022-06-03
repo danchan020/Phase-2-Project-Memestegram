@@ -90,7 +90,8 @@ function ContentCard({
 							/>
 
 							<img className="post-comments-icon" 
-							src='https://cdn-images-1.medium.com/max/1600/1*6miMQJi9c1vRDzM_cEvs8A.png' />
+							src='https://cdn-images-1.medium.com/max/1600/1*6miMQJi9c1vRDzM_cEvs8A.png'
+							onClick={() => setShowComments(!showComments)} />
 
 							<img className='post-share-icon'
 							src='https://cdn-images-1.medium.com/max/1600/1*_tnvQnWTMGO6ZoI8QeykBQ.png' />

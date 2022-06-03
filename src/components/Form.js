@@ -12,7 +12,9 @@ function Form({ handleAddMeme }) {
 		favorites: true,
 		timestamp: "",
 	}
-	
+
+	// add instructions/ steps
+
 	const [formData, setFormData] = useState(initialMemeData)
 
 	const history = useHistory()
