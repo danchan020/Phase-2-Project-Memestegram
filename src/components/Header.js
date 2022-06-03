@@ -6,13 +6,12 @@ function Header() {
 		<div>
 			<nav className='navigation-border'>
 
-				<img className='navigation-logo'
-					src='https://cdn-images-1.medium.com/max/800/1*q3DEmm3wsZk5A550FDaaaA.png'
-				/>		
-
-				<img className='navigation-user-icon'
-					src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png'
-				/>
+				<Link exact to="/">
+					<img className='navigation-logo'
+					src='https://cdn-images-1.medium.com/max/800/1*q3DEmm3wsZk5A550FDaaaA.png' />
+				</Link>
+					<img className='navigation-user-icon'
+					src='https://cdn-images-1.medium.com/max/800/1*oMTud7GTomqZT3vsX4_NsA.png' />
 
 				<Link to="favorites">
 					<img className='navigation-likes-icon'
@@ -20,8 +19,7 @@ function Header() {
 				</Link>
 
 				<img className='navigation-git-icon'
-					src='https://cdn-images-1.medium.com/max/800/1*3aTtZKZ6xdgOjqwn375nfg.png'
-				/>
+					src='https://cdn-images-1.medium.com/max/800/1*3aTtZKZ6xdgOjqwn375nfg.png' />
 
 				<Link to="form">
 					<img className='navigation-add-post-icon'
@@ -29,8 +27,7 @@ function Header() {
 				</Link>
 
 				<img className='navigation-messenger-icon'
-					src='https://cdn-images-1.medium.com/max/800/1*Mw63s4mm5NpFYCGAUV7qPg.png'
-				/>
+					src='https://cdn-images-1.medium.com/max/800/1*Mw63s4mm5NpFYCGAUV7qPg.png' />
 
 				<Link exact to="/">
 					<img className='navigation-home-icon'
