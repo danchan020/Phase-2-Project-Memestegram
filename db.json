@@ -7,8 +7,7 @@
       "genre": "Sports",
       "comments": [
         "Please",
-        "Let me call you on your cell phone",
-        "asdfa"
+        "Let me call you on your cell phone"
       ],
       "favorites": true,
       "timestamp": 1654229978560
@@ -20,8 +19,7 @@
       "genre": "Sports",
       "comments": [
         "This is great!",
-        "Two buttons, one push",
-        "asdfa"
+        "Two buttons, one push"
       ],
       "favorites": true,
       "timestamp": 1654229977560
@@ -113,20 +111,10 @@
       "url": "https://i.imgflip.com/3oevdk.jpg",
       "genre": "Troll",
       "comments": [
-        "This is great!",
-        "gfgsdgds"
+        "This is great!"
       ],
       "favorites": true,
       "timestamp": 1624223978560
-    },
-    {
-      "id": "TuFHByE",
-      "name": "name",
-      "url": "asdf",
-      "genre": "coding",
-      "comments": [],
-      "favorites": true,
-      "timestamp": 1654235494200
     }
   ]
 }
