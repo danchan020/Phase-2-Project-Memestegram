@@ -28,7 +28,11 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves, handleDelete
 
 	return (
 		<div>
+			
 			<div className='genre-bar'>
+				<div>
+					<label>Select Genre: </label>
+				</div>
 				<select
 					className='genre-bar-text'
 					type = "text" 
