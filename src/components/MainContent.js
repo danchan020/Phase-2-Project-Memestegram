@@ -30,7 +30,7 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves, handleDelete
 					className='genre-bar-text'
 					type = "text" 
 					onChange = {handleChange}
-				>
+					>
 					<option 
 					className='option'
 					value="All"> All </option>
@@ -40,8 +40,31 @@ function MainContent({ memes, addToFavorites, baseUrl, updateFaves, handleDelete
 					<option value="Fails"> Fails </option>
 					<option value="Sports"> Sports </option>
 					<option value="Animals"> Animals </option>
-			</select>
-		</div>
+				</select>
+			</div>
+			
+			<div className='filter-box'>
+				<img 
+				className='filter-box-cool'
+				src='https://cdn-images-1.medium.com/max/1600/1*dxqYYwASUE0JTX-svqgEFA.png' />
+
+				<img
+				className='filter-box-funny'
+				src='https://cdn-images-1.medium.com/max/1600/1*tY2nbxgv-6xA0eUHTih3JQ.png' 
+				/>
+
+				<img
+				className='filter-box-shocking'
+				src='https://cdn-images-1.medium.com/max/1600/1*9PovJWTegJ87jLr0-Uw0MQ.png' 
+				/>
+
+				<img
+				className='filter-box-questionable'
+				src='https://cdn-images-1.medium.com/max/1600/1*PFqWC7Y79cvJgvUZ6_G6SA.png' 
+				/>
+
+			</div>
+
 			{renderPosts}
 		</div>
 	)

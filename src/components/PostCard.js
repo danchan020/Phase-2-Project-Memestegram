@@ -68,7 +68,7 @@ function ContentCard({
 
 	return (
 		<div className='postcard-wrapper'>
-			<div className='left-col'>
+			<div className='main-post'>
 				<div className='post'>
 					<div className='info'>
 						<div className='user'>

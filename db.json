@@ -9,7 +9,7 @@
         "Please",
         "Let me call you on your cell phone"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 1654229978560
     },
     {
@@ -21,7 +21,7 @@
         "This is great!",
         "Two buttons, one push"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 1654229977560
     },
     {
@@ -102,7 +102,7 @@
         "step one... step two... step three.. step 4",
         "my plans for life"
       ],
-      "favorites": true,
+      "favorites": false,
       "timestamp": 1651229878560
     },
     {
