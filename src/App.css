@@ -328,14 +328,15 @@
 }
 
 .comment-wrapper :hover{
-	color: lightblue;
+	color: white;
+	background-color: lightgrey;
 }
 
 .comment-button {
 	background-color: white;
-	border: 0.5px solid lightgray;
-	border-radius: 10px;
-	box-shadow: 0px 0px 0.05px 0.05px rgb(0,0,0)
+	color: rgb(129, 129, 129);
+	border-radius: 4px;
+	border: 0px;
 }
 
 /*FORM PAGE*/
