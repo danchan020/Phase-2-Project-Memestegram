@@ -12,6 +12,8 @@ function Form({ handleAddMeme }) {
 		favorites: true
 	}
 
+	
+
 	const history = useHistory()
 
 	const [formData, setFormData] = useState(initialMemeData)
