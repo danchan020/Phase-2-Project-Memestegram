@@ -59,20 +59,21 @@ function Form({ handleAddMeme }) {
 					className='form-title-input'
 					id="name"
 					onChange={handleChange}
-					placeholder='Title:'
+					placeholder='Title'
 					ref={focusEffect}
 					type="text"
 					value={formData.title}
+					required
 				/>
 				<br></br>
 				<input
 					className='form-url-input'
 					id="url"
 					onChange={handleChange}
-					placeholder="URL:"
+					placeholder="Image Link"
 					type="text"
 					value={formData.meme}
-
+					required
 				/>
 				<div >
 					<select
