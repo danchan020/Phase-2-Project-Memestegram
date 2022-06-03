@@ -60,13 +60,9 @@ function ContentCard({
 	const activeComments =
 		<div>
 			{renderComments}
-			<form 
-			className='comment-add-form'
-			onSubmit={handleSubmit} onChange={handleChange} >
-				<input 
-				className='comment-add-text'
-				type="text" value={addComment}></input>
-				<button className='comment-button' type="submit">Add Comment</button>
+			<form onSubmit={handleSubmit} onChange={handleChange} >
+				<input type="text" value={addComment} required placeholder='Add comment...'></input>
+				<button className='comment-button' type="submit">Post</button>
 			</form>
 		</div>
 
