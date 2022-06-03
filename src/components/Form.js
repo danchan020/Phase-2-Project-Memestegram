@@ -7,13 +7,11 @@ function Form({ handleAddMeme }) {
 		id: "",
 		name: "",
 		url: "",
-		genre: "coding",
+		genre: "",
 		comments: [],
 		favorites: true,
 		timestamp: "",
 	}
-
-	// add instructions/ steps
 
 	const [formData, setFormData] = useState(initialMemeData)
 
@@ -37,7 +35,7 @@ function Form({ handleAddMeme }) {
 		}
 		fetch('http://localhost:8000/memes', {
 			method: 'POST',
-			headers: {'Content-Type': 'application/json'},
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newPost)
 		})
 			.then(resp => resp.json())
@@ -51,33 +49,32 @@ function Form({ handleAddMeme }) {
 	useEffect(() => { focusEffect.current.focus() }, [])
 
 	return (
-		
-		<form		
+
+		<form
 			onSubmit={handleSubmit}>
-			
+
 			<div className='form'>
 				<h3 className='form-title'> Post Your Meme!</h3>
-					<input
-						className='form-title-input'
-						id="name"
-						onChange={handleChange}
-						placeholder='Title:'
-						ref={focusEffect}
-						type="text"
-						value={formData.title}
-					/>
-					<br></br>
-					<input
-						className='form-url-input'
-						id="url"
-						onChange={handleChange}
-						placeholder="URL:"
-						type="text"
-						value={formData.meme}
-						
-					/>
+				<input
+					className='form-title-input'
+					id="name"
+					onChange={handleChange}
+					placeholder='Title:'
+					ref={focusEffect}
+					type="text"
+					value={formData.title}
+				/>
+				<br></br>
+				<input
+					className='form-url-input'
+					id="url"
+					onChange={handleChange}
+					placeholder="URL:"
+					type="text"
+					value={formData.meme}
+
+				/>
 				<div >
-					<label> Genre: </label>
 					<select
 						className='form-input-select'
 						type="text"
@@ -85,20 +82,23 @@ function Form({ handleAddMeme }) {
 						value={formData.genre}
 						onChange={handleChange}
 					>
-					<option value="Coding"> Coding </option>
-					<option value="Pop culture"> Pop Culture </option>
-					<option value="Troll"> Troll </option>
-					<option value="Fails"> Fails </option>
-					<option value="Sports"> Sports </option>
-					<option value="Animals"> Animals </option>
+						<option value="" disabled selected> Select Genre</option>
+						<option value="Coding"> Coding </option>
+						<option value="Pop culture"> Pop Culture </option>
+						<option value="Troll"> Troll </option>
+						<option value="Fails"> Fails </option>
+						<option value="Sports"> Sports </option>
+						<option value="Animals"> Animals </option>
 					</select>
-					<input type="submit" value="Post" />
+					<div>
+						<input type="submit" value="Post" />
+					</div>
 				</div>
-			
+
 				<img
-				className='form-image'
-				src={formData.url || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
-				alt="meme preview"
+					className='form-image'
+					src={formData.url || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
+					alt="meme preview"
 				/>
 			</div>
 		</form>
