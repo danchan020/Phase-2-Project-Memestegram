@@ -19,6 +19,8 @@ function MainContent({ memes, addToFavorites, baseUrl }) {
 
 
 
+
+
 	return (
 		<div>
 			<div className='filter-box'>
