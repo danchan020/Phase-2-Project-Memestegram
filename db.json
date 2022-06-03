@@ -23,7 +23,7 @@
         "Two buttons, one push",
         "asdfa"
       ],
-      "favorites": false,
+      "favorites": true,
       "timestamp": 1654229977560
     },
     {
@@ -120,31 +120,13 @@
       "timestamp": 1624223978560
     },
     {
-      "id": "rcBtLp6",
-      "name": "sadf",
+      "id": "TuFHByE",
+      "name": "name",
       "url": "asdf",
-      "genre": "Pop culture",
-      "comments": [],
-      "favorites": false,
-      "timestamp": 1653222978560
-    },
-    {
-      "id": "mI8O6Qp",
-      "name": "asdf",
-      "url": "asdf",
-      "genre": "Sports",
+      "genre": "coding",
       "comments": [],
       "favorites": true,
-      "timestamp": 1554029978560
-    },
-    {
-      "id": "KmRtW2q",
-      "name": "sdfg",
-      "url": "sdfg",
-      "genre": "Troll",
-      "comments": [],
-      "favorites": true,
-      "timestamp": 1654232228474
+      "timestamp": 1654235494200
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from './PostCard'
 
-function Favorites({ favoritesList, updateFaves }) {
+function Favorites({ favoritesList, updateFaves, handleDelete }) {
 
 	const renderPosts = favoritesList.map(post => {
 		return (
@@ -10,10 +10,10 @@ function Favorites({ favoritesList, updateFaves }) {
 				post={post}
 				{...post}
 				updateFaves={updateFaves}
+				handleDelete={handleDelete}
 			/>
 		)
 	})
-
 
 	return (
 		<div>

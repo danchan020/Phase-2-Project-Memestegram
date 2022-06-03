@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 function Form({ handleAddMeme }) {
 
@@ -12,16 +12,17 @@ function Form({ handleAddMeme }) {
 		favorites: true,
 		timestamp: "",
 	}
-	const history = useHistory()
-
+	
 	const [formData, setFormData] = useState(initialMemeData)
 
-	function handleChange(e) {
+	const history = useHistory()
+
+	const handleChange = (e) => {
 		const { id, value } = e.target
 		setFormData({ ...formData, [id]: value })
 	}
 
-	function handleSubmit(e) {
+	const handleSubmit = (e) => {
 		e.preventDefault()
 		const newPost = {
 			id: "",
@@ -34,16 +35,14 @@ function Form({ handleAddMeme }) {
 		}
 		fetch('http://localhost:8000/memes', {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify(newPost)
-		}).then(resp => resp.json())
+		})
+			.then(resp => resp.json())
 			.then(data => {
 				handleAddMeme(data)
 				history.push(`/`)
 			})
-		setFormData(initialMemeData)
 	}
 
 	const focusEffect = useRef()
@@ -70,7 +69,7 @@ function Form({ handleAddMeme }) {
 			/>
 
 			<img
-				src={formData.meme || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
+				src={formData.url || "https://codingbootcamps.io/wp-content/uploads/m2.png"}
 				alt="meme preview"
 			/>
 
@@ -88,9 +87,7 @@ function Form({ handleAddMeme }) {
 				<option value="Sports"> Sports </option>
 				<option value="Animals"> Animals </option>
 			</select>
-
 			<input type="submit" value="Post" />
-
 		</form>
 	)
 }

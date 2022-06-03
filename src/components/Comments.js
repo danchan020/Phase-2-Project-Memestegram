@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Comments({ comment }) {
+function Comments({ index, comment }) {
 
 	return (
 		<div>
 			<p>"{comment}"</p>
+			<button>X</button>
 		</div>
 	)
 }

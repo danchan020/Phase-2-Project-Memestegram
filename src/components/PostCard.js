@@ -11,6 +11,7 @@ function ContentCard({
 	timestamp,
 	baseUrl,
 	updateFaves,
+	handleDelete
 }) {
 
 	const heartLinkFull = "https://cdn-images-1.medium.com/max/800/1*km6tQMVzzuccuhE0MxvSzQ.png"
@@ -29,13 +30,10 @@ function ContentCard({
 		setUserComments(newComments)
 		fetch(baseUrl + `/${id}`, {
 			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				"comments": newComments
-			})
-		}).then(resp => resp.json())
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ "comments": newComments })
+		})
+			.then(resp => resp.json())
 			.then(() => {
 				setAddComment("")
 			})
@@ -45,6 +43,15 @@ function ContentCard({
 		updateFaves(id, isHeart)
 		setIsHeart(!isHeart)
 	}
+
+	const deletePost = () => handleDelete(id)
+
+	const date = new Date(timestamp)
+	const renderDate = (
+		(date.getMonth() + 1) +"/" + 
+		date.getDate() + "/" + 
+		date.getFullYear()
+	);
 
 	const renderComments = userComments.map((comment, index) => {
 		return <Comments key={comment[index]} comment={comment} />
@@ -59,21 +66,11 @@ function ContentCard({
 			</form>
 		</div>
 
-
-	const date = new Date(timestamp)
-	const renderDate = (
-		(date.getMonth() + 1) +
-		"/" + date.getDate() +
-		"/" + date.getFullYear()
-	);
-
 	return (
 		<div className='postcard-wrapper'>
 			<div className='left-col'>
-
 				<div className='post'>
 					<img className="postcard-image" src={url} alt={name} />
-
 					<div className='post-content'>
 						<div className='reaction-wrapper'>
 							<img
@@ -84,7 +81,10 @@ function ContentCard({
 						</div>
 						<h5 className='postcard-post-name'>{name}</h5>
 						<p className='postcard-post-genre'>Genre: {genre}</p>
-						<p lassName='postcard-post-genre'>Date: {renderDate}</p>
+						<p className='postcard-post-genre'>Date: {renderDate}</p>
+					</div>
+					<div>
+						<button onClick={deletePost}>Delete Post</button>
 					</div>
 					<div className='comment-wrapper'>
 						<button onClick={() => setShowComments(!showComments)} >
@@ -94,7 +94,6 @@ function ContentCard({
 					<div>
 						{showComments ? activeComments : null}
 					</div>
-
 				</div>
 			</div>
 		</div>
