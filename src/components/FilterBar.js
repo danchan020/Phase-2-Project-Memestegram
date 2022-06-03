@@ -54,14 +54,13 @@ function FilterBar({ search }) {
 			})
 	}
 
-	const sortMemes = memes.sort((a, b) => b.timestamp - a.timestamp)
-	const searchFilter = sortMemes.filter(
-		meme => meme.name.toLowerCase().includes(search.toLowerCase())
-	)
-	const sortFaveMemes = favoritesList.sort((a, b) => b.timestamp - a.timestamp)
-	const searchFaveFilter = sortFaveMemes.filter(
-		meme => meme.name.toLowerCase().includes(search.toLowerCase())
-	)
+	const sortMemes = memes.filter(
+		meme => meme.name.toLowerCase().includes(search.toLowerCase()))
+		.sort((a, b) => b.timestamp - a.timestamp)
+	
+		const sortFaveMemes = favoritesList.filter(
+		meme => meme.name.toLowerCase().includes(search.toLowerCase()))
+		.sort((a, b) => b.timestamp - a.timestamp)
 
 	return (
 		<div>
@@ -71,7 +70,7 @@ function FilterBar({ search }) {
 				</Route>
 				<Route exact path="/">
 					<MainContent
-						memes={searchFilter}
+						memes={sortMemes}
 						baseUrl={baseUrl}
 						updateFaves={updateFaves}
 						handleDelete={handleDelete}
@@ -79,7 +78,7 @@ function FilterBar({ search }) {
 				</Route>
 				<Route path="/favorites">
 					<Favorites
-						favoritesList={searchFaveFilter}
+						favoritesList={sortFaveMemes}
 						updateFaves={updateFaves}
 						handleDelete={handleDelete}
 					/>
