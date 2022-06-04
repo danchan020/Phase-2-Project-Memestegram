@@ -121,9 +121,23 @@
       "name": "Fry Codes",
       "url": "https://memegenerator.net/img/instances/57775576.jpg",
       "genre": "Coding",
-      "comments": [],
-      "favorites": false,
-      "timestamp": 1653129878560
+      "comments": [
+        "Hahaha",
+        ":)"
+      ],
+      "favorites": true,
+      "timestamp": 1654229978560
+    },
+    {
+      "id": "3ZDpSYB",
+      "name": "Business Cat",
+      "url": "https://dontgetserious.com/wp-content/uploads/2021/04/Business-Cat-meme.jpeg",
+      "genre": "Animals",
+      "comments": [
+        "So funny! "
+      ],
+      "favorites": true,
+      "timestamp": 1654291797218
     }
   ]
 }
