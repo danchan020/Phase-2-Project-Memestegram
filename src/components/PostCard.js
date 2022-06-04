@@ -64,7 +64,7 @@ function ContentCard({
 			className='comment-add-form'
 			onSubmit={handleSubmit} onChange={handleChange} >
 				<input 
-				className=''
+				className='comment-add-text'
 				type="text" value={addComment}></input>
 				<button className='comment-button' type="submit">Add Comment</button>
 			</form>

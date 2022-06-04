@@ -45,14 +45,14 @@
 	border-bottom: 1px solid lightgrey;
 	padding: 5px 0;
 	padding-top: 20px;
-	padding-left: 20px;
+	padding-left: 10px;
 	margin-bottom: 15px;
 }
 
 .navigation-logo {
 	width: auto;
 	height: 40px;
-	margin-top: -8px;
+	margin-top: -6px;
 }
 
 .navigation-search-input {	
@@ -148,8 +148,7 @@
 	flex-direction: row;
 	border: 1px solid lightgray;
 	margin-bottom: -20px;
-	margin-top: 20px;
-	
+	margin-top: 20px;	
 }
 
 .filter-box-cool {

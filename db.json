@@ -1,30 +1,6 @@
 {
   "memes": [
     {
-      "id": "1",
-      "name": "Drake Hotline Bling",
-      "url": "https://i.imgflip.com/30b1gx.jpg",
-      "genre": "Sports",
-      "comments": [
-        "Please",
-        "Let me call you on your cell phone"
-      ],
-      "favorites": false,
-      "timestamp": 1654229978560
-    },
-    {
-      "id": "2",
-      "name": "Two Buttons",
-      "url": "https://i.imgflip.com/1g8my4.jpg",
-      "genre": "Sports",
-      "comments": [
-        "This is great!",
-        "Two buttons, one push"
-      ],
-      "favorites": false,
-      "timestamp": 1654229977560
-    },
-    {
       "id": "3",
       "name": "Distracted Boyfriend",
       "url": "https://i.imgflip.com/1ur9b0.jpg",
@@ -79,7 +55,7 @@
         "Looks at those guns!",
         "good one!"
       ],
-      "favorites": false,
+      "favorites": true,
       "timestamp": 1654229975560
     },
     {
@@ -121,9 +97,23 @@
       "name": "Fry Codes",
       "url": "https://memegenerator.net/img/instances/57775576.jpg",
       "genre": "Coding",
-      "comments": [],
-      "favorites": false,
-      "timestamp": 198784751
+      "comments": [
+        "Hahaha",
+        ":)"
+      ],
+      "favorites": true,
+      "timestamp": 1654229978560
+    },
+    {
+      "id": "3ZDpSYB",
+      "name": "Business Cat",
+      "url": "https://dontgetserious.com/wp-content/uploads/2021/04/Business-Cat-meme.jpeg",
+      "genre": "Animals",
+      "comments": [
+        "So funny! "
+      ],
+      "favorites": true,
+      "timestamp": 1654291797218
     }
   ]
 }
